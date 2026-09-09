@@ -24,7 +24,8 @@
 .report-path{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:stretch}.step{padding:16px 10px;border-bottom:5px solid var(--blue);background:#fff;text-align:center;transition:.2s}.step:hover{transform:translateY(-5px);border-color:var(--coral)}.step span{display:block;color:var(--coral);font-weight:bold;font-size:.8em}.step strong{display:block;margin-top:8px;font-size:.85em}.tip{margin-top:18px;padding:14px 18px;background:#fff4cf;border-radius:8px;color:var(--ink)!important}
 .tabs{display:flex;gap:8px;margin-bottom:15px}.tab{padding:10px 13px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);font:inherit;font-size:.6em;cursor:pointer}.tab.active{background:var(--ink);color:#fff}.tab-panel{display:none}.tab-panel.active{display:block;animation:fade .35s ease}.content-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}.quote{padding:26px;border-left:8px solid var(--yellow);background:#fff;font-family:Georgia,serif;font-size:1.1em!important;color:var(--ink)!important}.quote:before{content:"\201C";display:block;color:var(--coral);font-size:2.5em;height:25px}
 .lab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.lab{min-height:145px;padding:16px 14px;border-radius:8px;background:var(--ink);color:#fff;transition:.2s}.lab:hover{background:var(--blue);transform:translateY(-6px)}.lab b{display:block;color:var(--yellow);font-size:.85em;line-height:1.15}.lab p{margin-top:12px;color:#e8f4f5;font-size:.78em}
-.quiz-box{max-width:820px;padding:23px;background:#fff;border-radius:10px;box-shadow:0 12px 26px rgba(23,37,61,.1)}.quiz-question{color:var(--ink)!important;font-size:.9em!important;font-weight:bold}.quiz-options{display:grid;gap:9px}.quiz-options button{padding:11px 14px;font-size:.68em}.quiz-options button:hover{border-color:var(--blue);background:#e9f8f7}.quiz-options button.correct{background:#d9f4df;border-color:#43a864}.quiz-options button.wrong{background:#ffe0d9;border-color:var(--coral)}.quiz-feedback{min-height:25px;margin:12px 0 0!important;font-weight:bold}.score{color:var(--blue)!important;font-weight:bold}
+/* Updated quiz-box for multiple questions */
+.quiz-box{max-width:820px;margin-bottom:24px;padding:23px;background:#fff;border-radius:10px;box-shadow:0 12px 26px rgba(23,37,61,.1)}.quiz-question{color:var(--ink)!important;font-size:.9em!important;font-weight:bold}.quiz-options{display:grid;gap:9px}.quiz-options button{padding:11px 14px;font-size:.68em}.quiz-options button:hover{border-color:var(--blue);background:#e9f8f7}.quiz-options button.correct{background:#d9f4df;border-color:#43a864}.quiz-options button.wrong{background:#ffe0d9;border-color:var(--coral)}.quiz-feedback{min-height:25px;margin:12px 0 0!important;font-weight:bold;display:none;}
 .reveal .progress{height:5px;color:var(--coral)}.reveal .controls{color:var(--blue)}.reveal .slide-number{color:var(--ink);background:transparent;font-size:14px}
 @keyframes slideReveal{from{opacity:0;transform:translateY(34px) scale(.96);filter:blur(5px)}to{opacity:1;transform:none;filter:blur(0)}}
 @keyframes popReveal{from{opacity:0;transform:translateY(24px) rotate(-2deg) scale(.92)}to{opacity:1;transform:none}}
@@ -33,12 +34,6 @@
 .reveal .slides section.present>p,.reveal .slides section.present>.hero-mark,.reveal .slides section.present>.hero-line,.reveal .slides section.present>.pill{animation:slideReveal .65s .12s cubic-bezier(.2,.8,.2,1) both}
 .reveal .slides section.present>.hero-line{animation-name:lineReveal;animation-delay:.28s}
 .reveal .slides section.present .card,.reveal .slides section.present .choice,.reveal .slides section.present .file,.reveal .slides section.present .step,.reveal .slides section.present .lab,.reveal .slides section.present .number-list li,.reveal .slides section.present .quiz-box,.reveal .slides section.present .tabs{animation:popReveal .65s cubic-bezier(.2,.8,.2,1) both}
-.reveal .slides section.present .card:nth-child(2),.reveal .slides section.present .choice:nth-child(2),.reveal .slides section.present .file:nth-child(2),.reveal .slides section.present .step:nth-child(2),.reveal .slides section.present .lab:nth-child(2),.reveal .slides section.present .number-list li:nth-child(2){animation-delay:.12s}
-.reveal .slides section.present .card:nth-child(3),.reveal .slides section.present .choice:nth-child(3),.reveal .slides section.present .file:nth-child(3),.reveal .slides section.present .step:nth-child(3),.reveal .slides section.present .lab:nth-child(3),.reveal .slides section.present .number-list li:nth-child(3){animation-delay:.24s}
-.reveal .slides section.present .card:nth-child(4),.reveal .slides section.present .choice:nth-child(4),.reveal .slides section.present .file:nth-child(4),.reveal .slides section.present .step:nth-child(4),.reveal .slides section.present .lab:nth-child(4),.reveal .slides section.present .number-list li:nth-child(4){animation-delay:.36s}
-.reveal .slides section.present .card:nth-child(5),.reveal .slides section.present .file:nth-child(5),.reveal .slides section.present .step:nth-child(5),.reveal .slides section.present .lab:nth-child(5),.reveal .slides section.present .number-list li:nth-child(5){animation-delay:.48s}
-.reveal .slides section.present .card:nth-child(6){animation-delay:.6s}
-.reveal .slides section.present .detail,.reveal .slides section.present .tip,.reveal .slides section.present .quote{animation:slideReveal .7s .42s both}
 @media(prefers-reduced-motion:reduce){.reveal *,.reveal *:before,.reveal *:after{animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important}}
 @media(max-width:700px){.reveal .slides section{padding:4vh 5vw}.reveal h1{font-size:2.2em}.reveal h2{font-size:1.4em}.reveal p,.reveal li{font-size:.68em}.card-grid,.interactive-grid,.split,.content-layout{grid-template-columns:1fr}.card{min-height:0}.report-path{grid-template-columns:repeat(3,1fr)}.lab-grid{grid-template-columns:repeat(2,1fr)}.hero:after{width:180px;height:180px;border-width:25px}.quote{font-size:.9em!important}}
 /* Ukuran baca proyektor: diperbesar, tetapi tetap menyesuaikan lebar layar. */
@@ -61,53 +56,898 @@
 </head>
 <body>
 <div class="reveal"><div class="slides">
-<section class="hero"><span class="hero-mark">TIK</span><p class="eyebrow">TEKNOLOGI INFORMASI DAN KOMUNIKASI · KELAS VII</p><h1>Bab III Teknologi Informasi dan Komunikasi</h1><div class="hero-line"></div><p class="lead">Memahami antarmuka, mengelola file, menjelajah internet, menggunakan surel, dan mengenal aplikasi perkantoran secara bertanggung jawab.</p><p><span class="pill">Gunakan tombol panah atau kontrol navigasi</span></p></section>
 
-<section><p class="eyebrow">BAB III · PENGANTAR</p><h2>Teknologi Informasi dan Komunikasi</h2><p class="lead">Teknologi Informasi dan Komunikasi (TIK) mencakup teknologi yang digunakan untuk mengumpulkan, mengolah, menyimpan, menyampaikan, dan menerima informasi.</p><div class="card-grid"><article class="card accent"><span class="card-icon">01</span><h3>Perangkat keras</h3><p>Bagian fisik komputer, seperti monitor, papan ketik, tetikus, dan media penyimpanan.</p></article><article class="card coral"><span class="card-icon">02</span><h3>Perangkat lunak</h3><p>Program yang mengatur kerja komputer dan membantu pengguna menyelesaikan tugas.</p></article><article class="card yellow"><span class="card-icon">03</span><h3>Pengguna</h3><p>Orang yang mengoperasikan komputer serta menentukan tujuan penggunaannya.</p></article></div></section>
+<!-- SLIDE 1: JUDUL -->
+<section class="hero">
+  <span class="hero-mark">TIK</span>
+  <p class="eyebrow">TEKNOLOGI INFORMASI DAN KOMUNIKASI · KELAS VII</p>
+  <h1>BAB 3 : TEKNOLOGI INFORMASI DAN KOMUNIKASI</h1>
+  <div class="hero-line"></div>
+  <p class="lead">Mempelajari antarmuka pengguna, folder dan file, peramban internet, mesin pencari, mekanisme surel, hingga kumpulan aplikasi perkantoran.</p>
+  <p><span class="pill">Gunakan tombol panah atau kontrol navigasi</span></p>
+</section>
 
-<section><p class="eyebrow">A · ANTARMUKA PENGGUNA</p><h2>A. Pengenalan Antarmuka Pengguna (User Interface)</h2><p class="lead">Antarmuka pengguna (User Interface atau UI) adalah bagian sistem yang menjadi penghubung antara pengguna dan komputer. UI yang baik harus mudah dipahami, praktis, komunikatif, dan mendukung pekerjaan pengguna.</p><div class="card-grid"><article class="card accent"><h3>Menu dan ikon</h3><p>Menyajikan perintah dalam bentuk teks atau simbol yang mudah dikenali.</p></article><article class="card coral"><h3>Papan ketik dan tetikus</h3><p>Memungkinkan pengguna memasukkan perintah serta memilih objek pada layar.</p></article><article class="card yellow"><h3>Gestur dan suara</h3><p>Mendukung interaksi melalui sentuhan, gerakan, atau perintah suara.</p></article></div></section>
+<!-- SUBBAB A -->
+<section>
+  <p class="eyebrow">A · PENGANTAR UI</p>
+  <h2>A. Pengenalan Antarmuka Pengguna</h2>
+  <p class="lead">Antarmuka pengguna (User Interface atau UI) merupakan komponen vital pada sebuah sistem operasi yang berfungsi sebagai jembatan komunikasi interaktif antara pengguna dengan sistem perangkat komputer.</p>
+  <div class="card-grid">
+    <article class="card accent">
+      <span class="card-icon">01</span>
+      <h3>Tujuan Utama</h3>
+      <p>Menciptakan mekanisme komunikasi langsung yang memastikan komputer dapat memahami instruksi manusia.</p>
+    </article>
+    <article class="card coral">
+      <span class="card-icon">02</span>
+      <h3>Faktor Kualitas</h3>
+      <p>Ditentukan oleh tingkat kemudahan operasional (user friendly), interaktivitas tinggi, dan sifat komunikatif.</p>
+    </article>
+    <article class="card yellow">
+      <span class="card-icon">03</span>
+      <h3>Struktur UI</h3>
+      <p>Terdiri dari menu layar, ikon visual, pintasan keyboard, kontrol mouse, gestur, serta bahasa perintah.</p>
+    </article>
+  </div>
+</section>
 
-<section><p class="eyebrow">B · FOLDER DAN FILE</p><h2>B. Folder dan File</h2><p class="lead">Folder adalah wadah untuk menyimpan file atau folder lain. File adalah kumpulan data yang disimpan dalam media penyimpanan dan diolah menggunakan aplikasi yang sesuai.</p><div class="card-grid"><article class="card accent"><h3>Folder</h3><p>Mengelompokkan file agar tersusun rapi dan mudah ditemukan.</p></article><article class="card coral"><h3>File</h3><p>Dapat dibuat, dibaca, diubah, disalin, dipindahkan, dan dihapus.</p></article><article class="card yellow"><h3>File Manager</h3><p>Pada Windows, pengelolaan file dilakukan menggunakan File Explorer.</p></article></div></section>
+<section>
+  <p class="eyebrow">A · INTERAKSI TEKS</p>
+  <h2>Command Line Interface (CLI)</h2>
+  <p class="lead">CLI adalah tipe antarmuka yang mengandalkan baris perintah teks sebagai medium utama interaksi antara pengguna dengan sistem operasi.</p>
+  <div class="split">
+    <div>
+      <p>Keunggulan utama CLI adalah efisiensi operasionalnya. Ia sangat ringan karena hanya membutuhkan spesifikasi perangkat keras tingkat rendah.</p>
+      <p class="detail">Kelemahan metode CLI adalah kurangnya aspek estetika visual dan keharusan mengetik seluruh baris perintah (code) secara akurat.</p>
+    </div>
+    <ol class="number-list">
+      <li><span class="number">01</span><span><strong>Memori Kecil</strong><br>Sangat irit dalam mengonsumsi kapasitas memori komputer.</span></li>
+      <li><span class="number">02</span><span><strong>Hardware Rendah</strong><br>Dapat berjalan optimal pada peranti spesifikasi rendah.</span></li>
+      <li><span class="number">03</span><span><strong>Input Manual</strong><br>Memaksa pengguna menghafal dan mengetik kode instruksi.</span></li>
+    </ol>
+  </div>
+</section>
 
-<section><p class="eyebrow">B · EKSTENSI FILE</p><h2>Ekstensi File</h2><p>Klik kartu untuk melihat jenis data yang diwakilinya.</p><div class="file-strip"><button class="file active" data-file=".DOC dan .DOCX digunakan untuk dokumen pengolah kata."><b>.DOCX</b><small>dokumen</small></button><button class="file" data-file=".XLSX digunakan untuk lembar kerja dan pengolahan angka."><b>.XLSX</b><small>angka</small></button><button class="file" data-file=".PPTX digunakan untuk membuat bahan presentasi."><b>.PPTX</b><small>presentasi</small></button><button class="file" data-file=".JPG, .JPEG, .BMP, dan .GIF digunakan untuk file gambar."><b>.JPG</b><small>gambar</small></button><button class="file" data-file=".MP3 dan .WAV digunakan untuk file audio."><b>.MP3</b><small>audio</small></button><button class="file" data-file=".ZIP digunakan untuk mengompresi atau memadatkan file."><b>.ZIP</b><small>kompresi</small></button></div><p class="detail" id="fileDetail">.DOC dan .DOCX digunakan untuk dokumen pengolah kata.</p></section>
+<section>
+  <p class="eyebrow">A · INTERAKSI VISUAL</p>
+  <h2>Graphical User Interface (GUI)</h2>
+  <p class="lead">GUI menghadirkan interaksi secara visual, memanfaatkan gambar, elemen grafik, dan ikon yang memanjakan mata melalui kontrol perangkat penunjuk (pointing device).</p>
+  <div class="interactive-grid">
+    <button class="choice" data-detail="Diadaptasi oleh mayoritas peranti lunak, siapapun bisa mengoperasikannya tanpa keahlian pemrograman khusus.">
+      <h3>User Friendly</h3>
+      <p>Sangat ramah bagi pengguna awam</p>
+    </button>
+    <button class="choice" data-detail="GUI dikontrol secara intuitif menggunakan mouse maupun track ball alih-alih baris teks manual.">
+      <h3>Kontrol Intuitif</h3>
+      <p>Memanfaatkan perangkat penunjuk</p>
+    </button>
+    <button class="choice" data-detail="Memiliki kelemahan komputasi, yaitu mengharuskan komputer punya memori internal memadai dan prosesor tingkat tinggi.">
+      <h3>Beban Sistem</h3>
+      <p>Butuh spesifikasi perangkat tinggi</p>
+    </button>
+    <button class="choice" data-detail="GUI mendominasi sistem operasi dan aplikasi modern berkat tampilan visual yang estetis dan komunikatif.">
+      <h3>Dominasi Modern</h3>
+      <p>Standar antarmuka masa kini</p>
+    </button>
+  </div>
+  <p class="detail" id="toolDetail">Pilih karakteristik untuk melihat penjelasannya.</p>
+</section>
 
-<section><p class="eyebrow">B · PENGELOLAAN FOLDER</p><h2>Pengelolaan Folder</h2><p class="lead">Folder sebaiknya diberi nama yang jelas, berisi file sejenis, dan tidak menggunakan nama yang terlalu panjang. Pengelompokan dapat dilakukan berdasarkan jenis, fungsi, atau waktu pembuatan.</p><div class="report-path"><div class="step"><span>01</span><strong>Beri nama jelas</strong></div><div class="step"><span>02</span><strong>Kelompokkan file</strong></div><div class="step"><span>03</span><strong>Hindari nama panjang</strong></div></div><p class="tip"><strong>Contoh:</strong> gunakan folder bernama “Gambar” untuk menyimpan koleksi foto dan ilustrasi.</p></section>
+<section>
+  <p class="eyebrow">A · INTERAKSI SUARA</p>
+  <h2>Voice User Interface (VUI)</h2>
+  <p class="lead">VUI adalah inovasi antarmuka mutakhir yang memfasilitasi pengguna untuk memberikan perintah secara verbal tanpa melalui input teks maupun klik.</p>
+  <div class="card-grid">
+    <article class="card accent">
+      <h3>Akselerasi Waktu</h3>
+      <p>Dirancang untuk secara signifikan menghemat waktu saat pengguna menelusuri aplikasi atau meminta info.</p>
+    </article>
+    <article class="card coral">
+      <h3>Tanpa Kontak Fisik</h3>
+      <p>Meminimalisasi interaksi sentuhan langsung dengan gawai lewat eksekusi suara presisi.</p>
+    </article>
+    <article class="card yellow">
+      <h3>Kelemahan VUI</h3>
+      <p>Rentannya ketidakakuratan ketika mesin mencoba mengonversi pola suara menjadi entitas teks perintah.</p>
+    </article>
+  </div>
+</section>
 
-<section><p class="eyebrow">A · JENIS USER INTERFACE</p><h2>Command Line Interface (CLI)</h2><p class="lead">CLI merupakan antarmuka berbasis teks. Pengguna berinteraksi dengan sistem dengan mengetikkan perintah tertentu pada baris perintah.</p><div class="split"><div><p>CLI menggunakan memori dan sumber daya perangkat keras yang relatif kecil. Antarmuka ini efisien bagi pengguna yang memahami sintaks perintah.</p><p class="detail">Keterbatasannya adalah pengguna harus mengingat perintah dengan tepat dan tampilannya kurang menarik secara visual.</p></div><ol class="number-list"><li><span class="number">01</span><span><strong>Contoh</strong><br>Command Prompt dan terminal.</span></li><li><span class="number">02</span><span><strong>Keunggulan</strong><br>Ringan dan efisien.</span></li><li><span class="number">03</span><span><strong>Kekurangan</strong><br>Memerlukan pengetahuan perintah.</span></li></ol></div></section>
+<!-- KUIS SUBBAB A -->
+<section>
+  <p class="eyebrow">LATIHAN SOAL · SUBBAB A</p>
+  <h2>Kuis: Antarmuka Pengguna</h2>
+  
+  <div class="quiz-box">
+    <p class="quiz-question">1. Apa fungsi utama antarmuka pengguna (UI) pada sistem operasi?</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Kurang tepat. Ini fungsi hardware/prosesor.">A. Mengolah angka dan data matematis</button>
+      <button data-correct="true" data-feedback="Tepat! UI berfungsi sebagai jembatan komunikasi agar komputer memahami instruksi manusia.">B. Jembatan komunikasi pengguna dengan komputer</button>
+      <button data-correct="false" data-feedback="Kurang tepat. Ini fungsi web browser.">C. Mengatur lalu lintas jaringan internet</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
 
-<section><p class="eyebrow">A · JENIS USER INTERFACE</p><h2>Graphical User Interface (GUI)</h2><p class="lead">GUI menggunakan unsur visual, seperti jendela, ikon, menu, tombol, kursor, tetikus, dan perangkat penunjuk lainnya.</p><div class="interactive-grid"><button class="choice" data-detail="GUI bersifat user friendly karena perintah ditampilkan melalui ikon dan menu yang mudah dikenali."><h3>Visual</h3><p>Ikon, jendela, dan menu</p></button><button class="choice" data-detail="GUI memudahkan pengguna menjalankan aplikasi tanpa harus menghafal banyak baris perintah."><h3>User friendly</h3><p>Mudah dipelajari</p></button><button class="choice" data-detail="GUI memerlukan perangkat keras dengan spesifikasi lebih tinggi karena harus menampilkan banyak unsur grafis."><h3>Kebutuhan sistem</h3><p>Memerlukan sumber daya lebih besar</p></button><button class="choice" data-detail="Contoh GUI adalah tampilan Windows, Linux, macOS, serta berbagai aplikasi modern."><h3>Contoh</h3><p>Windows dan aplikasi modern</p></button></div><p class="detail" id="toolDetail">Pilih karakteristik untuk melihat penjelasannya.</p></section>
+  <div class="quiz-box">
+    <p class="quiz-question">2. Faktor utama yang menunjukkan kualitas antarmuka pengguna adalah...</p>
+    <div class="quiz-options">
+      <button data-correct="true" data-feedback="Tepat! User friendly adalah indikator utama kualitas UI.">A. Kemudahan operasional (user friendly)</button>
+      <button data-correct="false" data-feedback="Kurang tepat. Harga tidak menentukan kualitas antarmuka.">B. Harganya yang mahal</button>
+      <button data-correct="false" data-feedback="Kurang tepat. UI baik tidak memaksa hafal kode.">C. Memaksa pengguna menghafal banyak kode</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
 
-<section><p class="eyebrow">A · JENIS USER INTERFACE</p><h2>Voice User Interface (VUI)</h2><p class="lead">VUI memungkinkan pengguna memberikan perintah kepada perangkat melalui suara. Teknologi ini dapat digunakan untuk membuka aplikasi, melakukan pencarian, atau menjalankan fungsi tertentu.</p><div class="card-grid"><article class="card accent"><h3>Keunggulan</h3><p>Mempercepat pemberian perintah dan dapat digunakan tanpa menyentuh perangkat secara langsung.</p></article><article class="card coral"><h3>Keterbatasan</h3><p>Perintah dapat keliru apabila suara tidak terdengar jelas atau sistem salah mengenali ucapan.</p></article><article class="card yellow"><h3>Penggunaan bijak</h3><p>Periksa kembali hasil perintah dan lindungi informasi pribadi saat menggunakan layanan suara.</p></article></div></section>
+  <div class="quiz-box">
+    <p class="quiz-question">3. Antarmuka yang mengandalkan baris perintah teks disebut...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. GUI menggunakan visual dan ikon.">A. Graphical User Interface (GUI)</button>
+      <button data-correct="false" data-feedback="Salah. VUI menggunakan suara.">B. Voice User Interface (VUI)</button>
+      <button data-correct="true" data-feedback="Benar! CLI adalah antarmuka berbasis baris perintah teks.">C. Command Line Interface (CLI)</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
 
-<section><p class="eyebrow">C · INTERNET</p><h2>C. Peramban (Browser) dan Mesin Pencari (Search Engine)</h2><p class="lead">Peramban dan mesin pencari membantu pengguna mengakses serta menemukan informasi di internet. Pengguna perlu memeriksa sumber dan menggunakan informasi secara bertanggung jawab.</p><div class="card-grid"><article class="card accent"><h3>Peramban</h3><p>Aplikasi untuk membuka dan menampilkan halaman web, misalnya Google Chrome, Mozilla Firefox, dan Microsoft Edge.</p></article><article class="card coral"><h3>Mesin pencari</h3><p>Layanan untuk menemukan informasi berdasarkan kata kunci, misalnya Google, Bing, dan Yahoo.</p></article><article class="card yellow"><h3>Alamat web</h3><p>URL diketikkan pada address bar untuk mengakses halaman tertentu.</p></article></div></section>
+  <div class="quiz-box">
+    <p class="quiz-question">4. Keunggulan utama dari penggunaan antarmuka CLI adalah...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Kurang tepat. CLI murni teks, tidak memiliki elemen estetika grafis.">A. Tampilannya penuh warna</button>
+      <button data-correct="true" data-feedback="Tepat! CLI sangat ringan dan membutuhkan memori kecil.">B. Mengonsumsi kapasitas memori yang sangat kecil</button>
+      <button data-correct="false" data-feedback="Kurang tepat. Ini keunggulan dari GUI.">C. Dapat dikontrol dengan mouse</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
 
-<section><p class="eyebrow">C · PERAMBAN</p><h2>Peramban (Browser atau Web Browser)</h2><p class="lead">Peramban adalah perangkat lunak yang mengambil dan menampilkan halaman web. Ketika URL dimasukkan, peramban meminta data kepada server dan menampilkan dokumen HTML kepada pengguna.</p><div class="split"><div><p>Selain membuka laman, peramban dapat menyimpan bookmark, mendukung autentikasi, membuka file HTML, CSS, dan JavaScript, serta terintegrasi dengan mesin pencari.</p><span class="pill">URL -&gt; server -&gt; halaman web</span></div><ol class="number-list"><li><span class="number">01</span><span><strong>Masukkan URL</strong><br>Ketik alamat pada address bar.</span></li><li><span class="number">02</span><span><strong>Ambil data</strong><br>Browser meminta data dari server.</span></li><li><span class="number">03</span><span><strong>Tampilkan halaman</strong><br>HTML dirender menjadi laman web.</span></li></ol></div></section>
+  <div class="quiz-box">
+    <p class="quiz-question">5. Antarmuka yang diadaptasi mayoritas perangkat lunak karena user friendly adalah...</p>
+    <div class="quiz-options">
+      <button data-correct="true" data-feedback="Benar! GUI digunakan luas karena mudah dioperasikan.">A. GUI</button>
+      <button data-correct="false" data-feedback="Kurang tepat. VUI adalah antarmuka suara.">B. VUI</button>
+      <button data-correct="false" data-feedback="Kurang tepat. CLI digunakan untuk kebutuhan khusus yang efisien memori.">C. CLI</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
 
-<section><p class="eyebrow">C · MESIN PENCARI</p><h2>Mesin Pencari (Search Engine)</h2><p class="lead">Mesin pencari menemukan informasi sesuai kata kunci yang dimasukkan pengguna. Prosesnya terdiri atas tiga tahap utama.</p><div class="report-path"><div class="step"><span>01</span><strong>Crawling</strong><br>Mengumpulkan data dari halaman web.</div><div class="step"><span>02</span><strong>Indexing</strong><br>Mengelompokkan data dalam indeks.</div><div class="step"><span>03</span><strong>Ranking</strong><br>Mengurutkan hasil yang relevan.</div></div><p class="tip"><strong>Catatan:</strong> gunakan kata kunci yang spesifik dan bandingkan informasi dari beberapa sumber.</p></section>
+  <div class="quiz-box">
+    <p class="quiz-question">6. Apa kelemahan utama dari Graphical User Interface (GUI)?</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Justru GUI tidak menuntut keahlian pemrograman.">A. Menuntut pengguna hafal kode pemrograman</button>
+      <button data-correct="true" data-feedback="Tepat! GUI butuh memori dan spesifikasi prosesor tinggi.">B. Memerlukan memori internal dan spesifikasi yang tinggi</button>
+      <button data-correct="false" data-feedback="Salah. Visual GUI sangat estetis.">C. Tampilannya membosankan</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
 
-<section><p class="eyebrow">D · KOMUNIKASI DIGITAL</p><h2>D. Surel (E-Mail)</h2><p class="lead">Surel atau surat elektronik adalah sarana untuk mengirim dan menerima pesan melalui internet. Pesan dapat berupa teks, gambar, dokumen, atau video.</p><div class="card-grid"><article class="card accent"><h3>Fungsi surel</h3><p>Digunakan sebagai identitas digital, verifikasi layanan, dan sarana pendaftaran pada situs atau media sosial.</p></article><article class="card coral"><h3>Contoh layanan</h3><p>Gmail dan Yahoo Mail merupakan contoh layanan surel yang banyak digunakan.</p></article><article class="card yellow"><h3>Etika surel</h3><p>Gunakan subjek yang jelas, bahasa yang sopan, dan lampiran yang aman.</p></article></div></section>
+  <div class="quiz-box">
+    <p class="quiz-question">7. VUI (Voice User Interface) memungkinkan interaksi dengan perangkat menggunakan...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Kurang tepat. Keyboard dan mouse digunakan di GUI.">A. Ketikan keyboard dan klik mouse</button>
+      <button data-correct="false" data-feedback="Kurang tepat. Gerakan tubuh disebut gestur.">B. Gerakan anggota tubuh</button>
+      <button data-correct="true" data-feedback="Benar! VUI bekerja dengan instruksi verbal (suara).">C. Perintah verbal (suara)</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
 
-<section><p class="eyebrow">D · MEKANISME SUREL</p><h2>Cara Kerja Surel</h2><div class="report-path"><div class="step"><span>01</span><strong>Pengirim</strong><br>Komputer membuat dan mengirim pesan.</div><div class="step"><span>02</span><strong>Mail server</strong><br>Server pengirim meneruskan pesan melalui DNS.</div><div class="step"><span>03</span><strong>Penerima</strong><br>Server penerima mengirim pesan ke komputer penerima.</div></div><p class="tip"><strong>Jenis surel:</strong> plain text dan HTML berdasarkan format; Gmail dan Yahoo berdasarkan layanan; forwarding, POP, dan web based berdasarkan mekanisme.</p></section>
+  <div class="quiz-box">
+    <p class="quiz-question">8. Salah satu kelemahan teknologi Voice User Interface saat ini adalah...</p>
+    <div class="quiz-options">
+      <button data-correct="true" data-feedback="Tepat! Mesin masih sering keliru mengonversi pola suara.">A. Rentan ketidakakuratan konversi suara</button>
+      <button data-correct="false" data-feedback="Salah. VUI dirancang untuk menghemat waktu.">B. Membutuhkan waktu ekstra lama untuk mengetik</button>
+      <button data-correct="false" data-feedback="Salah. VUI meminimalisasi kontak fisik.">C. Membuat layar perangkat cepat rusak</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
 
-<section><p class="eyebrow">D · PRAKTIK</p><h2>Membuat Surel</h2><p class="lead">Pendaftaran akun surel dilakukan dengan mengisi identitas, membuat kata sandi, melakukan verifikasi nomor telepon, melengkapi data yang diperlukan, dan menyetujui kebijakan privasi.</p><ol class="number-list"><li><span class="number">01</span><span><strong>Isi identitas</strong><br>Masukkan nama dan data yang diminta.</span></li><li><span class="number">02</span><span><strong>Buat kata sandi</strong><br>Gunakan kata sandi yang kuat dan tidak mudah ditebak.</span></li><li><span class="number">03</span><span><strong>Verifikasi akun</strong><br>Gunakan nomor telepon aktif jika diminta.</span></li><li><span class="number">04</span><span><strong>Setujui kebijakan</strong><br>Baca dan pahami kebijakan privasi layanan.</span></li></ol></section>
+  <div class="quiz-box">
+    <p class="quiz-question">9. Mouse dan track ball umumnya digunakan untuk antarmuka tipe...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. CLI dikontrol dengan keyboard.">A. CLI</button>
+      <button data-correct="true" data-feedback="Benar! Mouse adalah perangkat penunjuk ciri khas GUI.">B. GUI</button>
+      <button data-correct="false" data-feedback="Salah. VUI menggunakan mikrofon (suara).">C. VUI</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
 
-<section><p class="eyebrow">E · APLIKASI PERKANTORAN</p><h2>E. Aplikasi Perkantoran (Office Suite)</h2><p class="lead">Aplikasi perkantoran adalah kumpulan perangkat lunak yang saling terintegrasi untuk mendukung pekerjaan, seperti mengolah kata, angka, presentasi, basis data, dan publikasi.</p><div class="card-grid"><article class="card accent"><h3>Pengolah kata</h3><p>Untuk membuat dan mengedit dokumen, laporan, serta surat.</p></article><article class="card coral"><h3>Pengolah angka</h3><p>Untuk menghitung, mengelola tabel, dan menyajikan data dalam grafik.</p></article><article class="card yellow"><h3>Presentasi</h3><p>Untuk menyusun informasi dalam bentuk slide yang komunikatif.</p></article></div></section>
+  <div class="quiz-box">
+    <p class="quiz-question">10. Yang tidak termasuk elemen pembentuk GUI adalah...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Menu adalah elemen pembentuk GUI.">A. Menu yang tertampil di layar</button>
+      <button data-correct="false" data-feedback="Salah. Ikon visual sangat erat kaitannya dengan GUI.">B. Ikon-ikon visual</button>
+      <button data-correct="true" data-feedback="Benar! Baris perintah teks murni adalah ciri utama CLI.">C. Baris perintah teks murni</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+</section>
 
-<section><p class="eyebrow">E · SEJARAH</p><h2>Sejarah Pengolah Kata</h2><p class="lead">Pengolah kata berkembang dari mesin mekanik menjadi perangkat lunak digital yang mampu menyimpan dan memformat dokumen dengan lebih cepat.</p><div class="report-path"><div class="step"><span>1714</span><strong>Henry Mill</strong><br>Memperoleh paten gagasan mesin penulis.</div><div class="step"><span>Abad ke-19</span><strong>Christopher Sholes</strong><br>Mengembangkan mesin ketik.</div><div class="step"><span>1950</span><strong>IBM</strong><br>Memperkenalkan mesin pengolah kata elektromekanis.</div></div><p class="tip"><strong>Perkembangan berikutnya:</strong> Mag Card IBM pada 1969, floppy disk pada 1970, dan komputer dengan layar CRT pada 1978.</p></section>
+<!-- SUBBAB B -->
+<section>
+  <p class="eyebrow">B · FOLDER DAN FILE</p>
+  <h2>B. Folder dan File</h2>
+  <p class="lead">Tata kelola penyimpanan informasi digital amat krusial. Sistem ini difasilitasi oleh keberadaan map elektronik (folder) dan berkas data (file) dalam memori komputer.</p>
+  <div class="card-grid">
+    <article class="card accent">
+      <h3>Folder (Map Elektronik)</h3>
+      <p>Suatu wadah perangkat lunak eksklusif untuk menyimpan ragam berkas serta cabang folder-folder lainnya.</p>
+    </article>
+    <article class="card coral">
+      <h3>File (Berkas Data)</h3>
+      <p>Himpunan entitas data yang direkam di dalam sistem yang dapat direkayasa, dimanipulasi, dibaca, maupun diedit.</p>
+    </article>
+    <article class="card yellow">
+      <h3>Fleksibilitas Data</h3>
+      <p>Keduanya dapat ditransfer ke media eksternal (kartu memori, diska USB) atau didistribusikan lewat internet.</p>
+    </article>
+  </div>
+</section>
 
-<section><p class="eyebrow">E · PERANGKAT LUNAK</p><h2>Perangkat Lunak Pengolah Kata</h2><p class="lead">Pada era komputer pribadi, perangkat lunak seperti WordStar, Star Information System, dan Microsoft Word membantu pengguna membuat dokumen secara digital.</p><div class="interactive-grid"><button class="choice" data-target="wordToolDetail" data-detail="Pengguna dapat menyalin teks atau objek tanpa mengetik ulang."><h3>Menyalin</h3><p>Menduplikasi isi dokumen</p></button><button class="choice" data-target="wordToolDetail" data-detail="Isi dokumen dapat dipindahkan dari satu bagian ke bagian lain menggunakan perintah Cut dan Paste."><h3>Memindahkan</h3><p>Mengatur kembali isi</p></button><button class="choice" data-target="wordToolDetail" data-detail="Teks, gambar, dan format dokumen dapat diperbaiki atau disesuaikan."><h3>Mengedit</h3><p>Memperbaiki isi dokumen</p></button><button class="choice" data-target="wordToolDetail" data-detail="Bagian yang tidak diperlukan dapat dihapus dengan tetap memeriksa isi dokumen sebelum disimpan."><h3>Menghapus</h3><p>Menghilangkan bagian tertentu</p></button></div><p class="detail" id="wordToolDetail">Pilih operasi untuk melihat penjelasannya.</p></section>
+<section>
+  <p class="eyebrow">B · EKSTENSI FILE</p>
+  <h2>Ekstensi File</h2>
+  <p>Ekstensi adalah penanda jenis file berupa karakter singkat. Klik kartu untuk melihat formatnya.</p>
+  <div class="file-strip">
+    <button class="file active" data-file=".DOC dan .DOCX untuk Word, .PPTX untuk PowerPoint, .XLSX untuk Excel."><b>.DOCX</b><small>dokumen</small></button>
+    <button class="file" data-file=".EXE digunakan sebagai identitas untuk format aplikasi."><b>.EXE</b><small>aplikasi</small></button>
+    <button class="file" data-file=".HTM dan .HTML digunakan untuk merepresentasikan dokumen laman internet."><b>.HTML</b><small>web</small></button>
+    <button class="file" data-file=".JPG, .JPEG, .BMP, dan .GIF dimanfaatkan untuk format gambar/animasi."><b>.JPG</b><small>gambar</small></button>
+    <button class="file" data-file=".MP3 dan .WAV digunakan untuk format file audio."><b>.MP3</b><small>audio</small></button>
+    <button class="file" data-file=".ZIP digunakan untuk menyimbolkan data biner kompresi."><b>.ZIP</b><small>kompresi</small></button>
+  </div>
+  <p class="detail" id="fileDetail">.DOC dan .DOCX untuk Word, .PPTX untuk PowerPoint, .XLSX untuk Excel.</p>
+</section>
 
-<section><p class="eyebrow">E · EVALUASI</p><h2>Rangkuman Materi</h2><div class="quiz-box"><p class="quiz-question">Antarmuka yang menggunakan ikon, jendela, dan menu disebut...</p><div class="quiz-options"><button data-correct="false">A. Command Line Interface</button><button data-correct="true">B. Graphical User Interface</button><button data-correct="false">C. Voice User Interface</button></div><p class="quiz-feedback" id="quizFeedback"></p><p class="score" id="score">Skor: 0 / 1</p></div></section>
+<section>
+  <p class="eyebrow">B · PENGELOLAAN DATA</p>
+  <h2>Pengelolaan File (File Explorer)</h2>
+  <p class="lead">Merapikan folder adalah metode fundamental untuk mengakselerasi penelusuran. Windows memfasilitasi hal ini menggunakan piranti bawaan bernama File Explorer.</p>
+  <div class="report-path">
+    <div class="step"><span>01</span><strong>Penamaan Logis</strong><br>Klasifikasikan nama folder (contoh: "Gambar" untuk .jpg) tanpa deretan frasa kepanjangan.</div>
+    <div class="step"><span>02</span><strong>Konsolidasi</strong><br>Kumpulkan file yang koheren berdasarkan ekstensi, kronologi waktu, maupun fungsinya.</div>
+    <div class="step"><span>03</span><strong>Utilitas Sistem</strong><br>Gunakan fitur copy, cut, paste, rename, delete, change icon, hingga search.</div>
+  </div>
+  <p class="tip"><strong>Penting:</strong> Pengaturan direktori yang terstruktur akan meminimalisasi kebingungan saat menelusuri ratusan dokumen digital.</p>
+</section>
 
-<section class="hero"><p class="eyebrow">SELESAI · REFLEKSI</p><h2>Gunakan TIK secara cerdas dan bertanggung jawab.</h2><p class="lead">Kelola file dengan rapi, telusuri informasi secara kritis, gunakan surel dengan aman, dan manfaatkan aplikasi perkantoran untuk belajar serta berkarya.</p><div class="hero-line"></div><p><span class="pill">Refleksi: keterampilan TIK apa yang akan kamu praktikkan?</span></p></section>
+<!-- KUIS SUBBAB B -->
+<section>
+  <p class="eyebrow">LATIHAN SOAL · SUBBAB B</p>
+  <h2>Kuis: Folder dan File</h2>
+  
+  <div class="quiz-box">
+    <p class="quiz-question">1. Wadah perangkat lunak dalam komputer yang digunakan untuk menyimpan berkas dinamakan...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Ekstensi adalah identitas file di ujung nama.">A. Ekstensi</button>
+      <button data-correct="true" data-feedback="Benar! Folder atau map elektronik adalah wadah untuk menyimpan file.">B. Folder</button>
+      <button data-correct="false" data-feedback="Salah. Memori adalah perangkat keras penyimpan data.">C. Memori Eksternal</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">2. Himpunan entitas data yang direkam di dalam sistem yang dapat dimanipulasi dan diedit disebut...</p>
+    <div class="quiz-options">
+      <button data-correct="true" data-feedback="Benar! Deskripsi tersebut merujuk pada pengertian file (berkas).">A. File</button>
+      <button data-correct="false" data-feedback="Salah. Flashdisk adalah media fisiknya.">B. Flashdisk</button>
+      <button data-correct="false" data-feedback="Salah. Direktori adalah sebutan lain dari folder.">C. Direktori</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">3. Fungsi dari ekstensi pada sebuah file adalah untuk...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Kecepatan transfer dipengaruhi hardware.">A. Mempercepat proses pemindahan data ke flashdisk</button>
+      <button data-correct="true" data-feedback="Tepat! Ekstensi berfungsi sebagai identitas atau penanda jenis file.">B. Menjadi identitas atau penanda jenis/format file tersebut</button>
+      <button data-correct="false" data-feedback="Salah. Ini fungsi dari folder.">C. Menyembunyikan data dari virus</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">4. Ekstensi yang digunakan untuk dokumen presentasi Microsoft PowerPoint adalah...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Ini ekstensi pengolah angka Excel.">A. .xlsx</button>
+      <button data-correct="false" data-feedback="Salah. Ini ekstensi dokumen Word.">B. .docx</button>
+      <button data-correct="true" data-feedback="Benar! .pptx khusus digunakan untuk bahan presentasi.">C. .pptx</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">5. Apabila Anda memiliki kumpulan foto digital, ekstensi file apa yang paling sering dijumpai?</p>
+    <div class="quiz-options">
+      <button data-correct="true" data-feedback="Tepat! .jpg adalah format gambar visual.">A. .jpg</button>
+      <button data-correct="false" data-feedback="Salah. Ini format audio (suara).">B. .mp3</button>
+      <button data-correct="false" data-feedback="Salah. Ini adalah format biner kompresi.">C. .zip</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">6. Dokumen laman internet disimbolkan dengan ekstensi...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Ini untuk eksekusi aplikasi.">A. .exe</button>
+      <button data-correct="true" data-feedback="Benar! .html dan .htm untuk dokumen laman web.">B. .html</button>
+      <button data-correct="false" data-feedback="Salah. Ini untuk file gambar bitmap.">C. .bmp</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">7. Peranti bawaan Windows yang berfungsi sebagai panel sentral manajemen data (folder/file) disebut...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Ini program untuk menjelajah web.">A. Internet Explorer</button>
+      <button data-correct="true" data-feedback="Tepat! File Explorer adalah fitur kelola berkas di Windows.">B. File Explorer</button>
+      <button data-correct="false" data-feedback="Salah. Command Prompt menggunakan CLI.">C. Command Prompt</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">8. Salah satu praktik pengelolaan file yang sangat disarankan adalah...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Menyimpan acak justru menyusahkan pencarian.">A. Menyimpan seluruh file secara acak dalam satu folder</button>
+      <button data-correct="false" data-feedback="Salah. Nama yang kepanjangan dapat memicu kebingungan.">B. Menggunakan nama folder dengan frasa sepanjang mungkin</button>
+      <button data-correct="true" data-feedback="Benar! Pengelompokan ini disebut konsolidasi data.">C. Mengelompokkan file sejenis (berdasarkan fungsi atau ekstensi) ke dalam satu folder</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">9. Jika Anda ingin mengubah nama sebuah file melalui File Explorer, fitur yang diklik adalah...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Cut digunakan untuk menggeser/memindahkan.">A. Cut</button>
+      <button data-correct="true" data-feedback="Tepat! Rename adalah perintah ganti nama.">B. Rename</button>
+      <button data-correct="false" data-feedback="Salah. Delete untuk menghapus.">C. Delete</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">10. Fasilitas di dalam File Explorer yang dimanfaatkan untuk melacak keberadaan berkas secara instan adalah...</p>
+    <div class="quiz-options">
+      <button data-correct="true" data-feedback="Benar! Fitur Search digunakan untuk pelacakan.">A. Search</button>
+      <button data-correct="false" data-feedback="Salah. Paste untuk menempelkan data.">B. Paste</button>
+      <button data-correct="false" data-feedback="Salah. Change Icon untuk mengubah gambar logo folder.">C. Change Icon</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+</section>
+
+<!-- SUBBAB C -->
+<section>
+  <p class="eyebrow">C · EKSPLORASI INTERNET</p>
+  <h2>C. Peramban dan Mesin Pencari</h2>
+  <p class="lead">Dinamika kehidupan masyarakat modern untuk berbelanja, riset, atau menjelajahi lautan informasi mustahil dijalankan tanpa aplikasi peramban internet maupun mesin pencari web.</p>
+  <div class="card-grid">
+    <article class="card accent">
+      <h3>Peramban (Browser)</h3>
+      <p>Peranti lunak esensial yang bertindak sebagai penghubung ke sumber daya informasi global melalui internet.</p>
+    </article>
+    <article class="card coral">
+      <h3>Mesin Pencari</h3>
+      <p>Utilitas komputasi canggih untuk melacak korelasi data digital dengan kueri kata kunci (keyword) spesifik.</p>
+    </article>
+    <article class="card yellow">
+      <h3>URL (Uniform Source Locator)</h3>
+      <p>Standar alamat dunia maya (WWW) yang diketikkan pada kolom address bar oleh pengguna.</p>
+    </article>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">C · MEKANISME WEB</p>
+  <h2>Peramban (Web Browser)</h2>
+  <p class="lead">Saat pengguna mengetik URL, peramban melayangkan penarikan data (proses fetching) terhadap kode skrip pemrograman seperti HTML, CSS, hingga JS.</p>
+  <div class="split">
+    <div>
+      <p>Fungsionalitas peramban mencakup penjagaan protokol keamanan berlapis, pembukaan laman spesifik, dan fitur kelola <i>bookmark</i> untuk mengarsipkan alamat daring favorit.</p>
+      <span class="pill">Chrome · Firefox · Edge · Safari · Opera</span>
+    </div>
+    <ol class="number-list">
+      <li><span class="number">01</span><span><strong>Ketik URL</strong><br>Memasukkan WWW pada address bar.</span></li>
+      <li><span class="number">02</span><span><strong>Proses Fetching</strong><br>Menarik skrip pemrograman dari web.</span></li>
+      <li><span class="number">03</span><span><strong>Kelola Bookmark</strong><br>Arsipkan alamat agar tak perlu dicari berulang.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">C · SEARCH ENGINE</p>
+  <h2>Mesin Pencari (Search Engine)</h2>
+  <p class="lead">Mesin pencari seperti Google, Bing, Yahoo, DuckDuckGo, Baidu, Ecosia, dan Ask, mengeksekusi pelacakan informasi menggunakan tiga tahap prosedur komputasi canggih.</p>
+  <div class="report-path">
+    <div class="step"><span>01</span><strong>Crawling</strong><br>Pengumpulan informasi halaman situs secara masif ke pangkalan data.</div>
+    <div class="step"><span>02</span><strong>Indexing</strong><br>Kategorisasi serta inventarisasi logis atas tumpukan data situs tersebut.</div>
+    <div class="step"><span>03</span><strong>Ranking</strong><br>Menentukan peringkat lalu mencetaknya sebagai hasil pencarian sesuai hierarki kesesuaian.</div>
+  </div>
+  <p class="tip"><strong>Fakta Sejarah:</strong> Archie dikenal dalam sejarah sebagai pelopor mesin pencari pangkalan data perintis yang rilis pada tahun 1990.</p>
+</section>
+
+<!-- KUIS SUBBAB C -->
+<section>
+  <p class="eyebrow">LATIHAN SOAL · SUBBAB C</p>
+  <h2>Kuis: Peramban & Mesin Pencari</h2>
+  
+  <div class="quiz-box">
+    <p class="quiz-question">1. Peranti lunak esensial yang bertindak menghubungkan pengguna ke sumber daya internet disebut...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. GUI adalah antarmuka interaksi visual.">A. Antarmuka GUI</button>
+      <button data-correct="true" data-feedback="Benar! Web browser atau peramban melayani akses internet.">B. Web Browser (Peramban)</button>
+      <button data-correct="false" data-feedback="Salah. Mesin pencari adalah fitur di dalam internet/peramban.">C. Search Engine (Mesin Pencari)</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">2. Ketika pengguna ingin masuk ke suatu laman spesifik, mereka mengetikkan WWW pada kolom...</p>
+    <div class="quiz-options">
+      <button data-correct="true" data-feedback="Tepat! URL diketikkan pada kolom address bar.">A. Address bar (URL)</button>
+      <button data-correct="false" data-feedback="Salah. Bookmark adalah menu penyimpan alamat favorit.">B. Menu Bookmark</button>
+      <button data-correct="false" data-feedback="Salah. Status bar ada di bagian bawah tampilan sistem.">C. Status bar</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">3. Proses saat peramban melayangkan penarikan informasi (kode HTML, CSS) dinamakan...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Crawling dilakukan oleh Search Engine.">A. Crawling</button>
+      <button data-correct="false" data-feedback="Salah. Indexing adalah tahap pengelompokan.">B. Indexing</button>
+      <button data-correct="true" data-feedback="Benar! Fetching adalah proses peramban mengambil dan merender skrip web.">C. Fetching</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">4. Fitur peramban yang memungkinkan Anda menyimpan situs favorit agar tak perlu mencarinya lagi adalah...</p>
+    <div class="quiz-options">
+      <button data-correct="true" data-feedback="Benar! Bookmark digunakan mengarsipkan alamat web.">A. Bookmark</button>
+      <button data-correct="false" data-feedback="Salah. Ekstensi adalah format file.">B. Ekstensi file</button>
+      <button data-correct="false" data-feedback="Salah. DNS bertugas mencarikan rute server (biasanya di surel).">C. DNS resolver</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">5. Berikut ini yang BUKAN merupakan contoh aplikasi web browser adalah...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Google Chrome adalah browser.">A. Google Chrome</button>
+      <button data-correct="false" data-feedback="Salah. Safari adalah browser milik Apple.">B. Safari</button>
+      <button data-correct="true" data-feedback="Tepat! DuckDuckGo adalah contoh Search Engine.">C. DuckDuckGo</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">6. Mesin canggih yang merespons informasi digital berdasarkan kata kunci (keyword) yang diketik disebut...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. File Explorer melacak data offline di Windows.">A. File Explorer</button>
+      <button data-correct="true" data-feedback="Benar! Mesin Pencari merespons keyword dengan menampilkan hasil web.">B. Search Engine</button>
+      <button data-correct="false" data-feedback="Salah. Word Processor adalah pengolah kata.">C. Word Processor</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">7. Tahap pertama dari mesin pencari saat ia mengumpulkan informasi halaman situs secara masif disebut...</p>
+    <div class="quiz-options">
+      <button data-correct="true" data-feedback="Benar! Crawling adalah tahapan penjelajahan dan pengumpulan.">A. Crawling</button>
+      <button data-correct="false" data-feedback="Salah. Indexing adalah tahap klasifikasi/pencatatan logis.">B. Indexing</button>
+      <button data-correct="false" data-feedback="Salah. Ranking adalah tahap penilaian skor laman.">C. Ranking</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">8. Tahap kategorisasi dan inventarisasi informasi ke dalam pangkalan data pada mesin pencari adalah tahapan...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Fetching adalah fungsi peramban, bukan mesin pencari.">A. Fetching</button>
+      <button data-correct="false" data-feedback="Salah. Ranking tahap pengurutan akhir.">B. Ranking</button>
+      <button data-correct="true" data-feedback="Tepat! Indexing (pengindeksan) adalah kategorisasi informasi hasil rangkuman.">C. Indexing</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">9. Archie dikenal dalam sejarah internet sebagai perintis dari platform teknologi...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Surel dirintis oleh Ray Tomlinson.">A. Surel (E-mail)</button>
+      <button data-correct="true" data-feedback="Benar! Archie (rilis 1990) adalah perintis mesin pencari web.">B. Mesin pencari (Search engine)</button>
+      <button data-correct="false" data-feedback="Salah. Office suite berkembang mandiri sejak mesin cetak.">C. Perangkat aplikasi perkantoran</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">10. Menentukan peringkat lalu mencetaknya ke hadapan pengguna sebagai hasil pencarian sesuai hierarki kesesuaian adalah tahapan...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Crawling hanya proses kumpul data.">A. Crawling</button>
+      <button data-correct="true" data-feedback="Benar! Ranking menampilkan hasil yang paling relevan bagi audiens.">B. Ranking</button>
+      <button data-correct="false" data-feedback="Salah. Ini proses penamaan ulang file.">C. Rename</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+</section>
+
+<!-- SUBBAB D -->
+<section>
+  <p class="eyebrow">D · KOMUNIKASI SURAT</p>
+  <h2>D. Surel (E-Mail)</h2>
+  <p class="lead">Surat elektronik menjadi substitusi modern persuratan konvensional yang memampukan pemindahan transmisi dokumen tulisan, visual, hingga audiovisual lintas yurisdiksi.</p>
+  <div class="card-grid">
+    <article class="card accent">
+      <h3>Pembuktian Identitas</h3>
+      <p>Menjadi pilar utama identitas personal dalam mengklaim akun-akun vital, e-banking, dan ponsel pintar.</p>
+    </article>
+    <article class="card coral">
+      <h3>Akses Ragam Platform</h3>
+      <p>Kunci mutlak untuk meregistrasikan diri ke media sosial, forum internet, hingga game online.</p>
+    </article>
+    <article class="card yellow">
+      <h3>Sejarah Awal Surel</h3>
+      <p>Diawali tahun 1971 lewat arsitektur rintisan SNDMSG (ARPANET) oleh Ray Tomlinson (pesan "QWERTYUIOP").</p>
+    </article>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">D · INFRASTRUKTUR</p>
+  <h2>Cara Kerja Surel (E-Mail)</h2>
+  <div class="report-path">
+    <div class="step"><span>01</span><strong>Sistem DNS</strong><br>Saat dikirim, mail server pengirim berinteraksi dengan DNS sebagai navigasi pencari.</div>
+    <div class="step"><span>02</span><strong>Transmisi Data</strong><br>Server DNS memindai lalu menemukan mail server dari penerima akhir surel tersebut.</div>
+    <div class="step"><span>03</span><strong>Endapan Repositori</strong><br>Pesan aman diendapkan di mail server penerima hingga pengguna login (sesi masuk).</div>
+  </div>
+  <p class="tip"><strong>Keandalan Server:</strong> Cara operasional transmisi ini mustahil berjalan tanpa difasilitasi oleh arsitektur server jaringan yang amat andal.</p>
+</section>
+
+<section>
+  <p class="eyebrow">D · KLASIFIKASI SUREL</p>
+  <h2>Jenis-Jenis Surel (E-Mail)</h2>
+  <p class="lead">Klasifikasi varian surel dibedakan menjadi tiga sudut pandang teknikal: orientasi format visual teks, kerangka mekanik jaringannya, dan entitas penyokong domain (brand).</p>
+  <ol class="number-list">
+    <li><span class="number">01</span><span><strong>Format Visual</strong><br>Baku tak berformat (Plain Text) atau model canggih modifikasi warna (HTML).</span></li>
+    <li><span class="number">02</span><span><strong>Penyokong Brand</strong><br>Penyedia komersial seperti Gmail (Google), Outlook (Microsoft), iCloud (Apple), Yahoo, Zoho.</span></li>
+    <li><span class="number">03</span><span><strong>Mekanik Jaringan</strong><br>Pemintas otomatis (forwarding), penyimpanan klien (POP mail), dan aplikasi akses web (web based e-mail).</span></li>
+  </ol>
+</section>
+
+<!-- KUIS SUBBAB D -->
+<section>
+  <p class="eyebrow">LATIHAN SOAL · SUBBAB D</p>
+  <h2>Kuis: Surel (E-Mail)</h2>
+  
+  <div class="quiz-box">
+    <p class="quiz-question">1. Fungsi surel selain mengirim dokumen dan surat elektronik adalah untuk...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Merakit komputer dilakukan fisik dan manual.">A. Merakit komponen perangkat keras komputer</button>
+      <button data-correct="false" data-feedback="Salah. Indexing fungsi dari mesin pencari.">B. Membantu indeks pencarian Search Engine</button>
+      <button data-correct="true" data-feedback="Benar! Surel digunakan memverifikasi identitas pengguna platform.">C. Verifikasi dan pembuktian identitas akun media sosial</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">2. Bagian jaringan yang memindai lalu menemukan letak tujuan dari mail server penerima disebut...</p>
+    <div class="quiz-options">
+      <button data-correct="true" data-feedback="Tepat! DNS bertindak layaknya navigasi rute ke mail server.">A. DNS (Domain Name System)</button>
+      <button data-correct="false" data-feedback="Salah. GUI tidak ada hubungan dengan lalu lintas surel.">B. GUI</button>
+      <button data-correct="false" data-feedback="Salah. Archie adalah mesin pencari lawas.">C. Mesin pencari Archie</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">3. Saat pesan sukses diantarkan, di manakah posisi pesan tersebut ditampung sebelum penerima login?</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Pesan harus meninggalkan perangkat pengirim.">A. Memori komputer pengirim</button>
+      <button data-correct="true" data-feedback="Benar! Pesan aman terparkir (diendapkan) di repositori mail server penerima.">B. Repositori mail server milik penerima</button>
+      <button data-correct="false" data-feedback="Salah. Aplikasi perkantoran tidak menampung data jaringan pos.">C. Di aplikasi perkantoran Word Processor</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">4. Model tampilan surat sederhana tak berformat disebut...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. E-mail HTML adalah e-mail yang dipercantik grafis/format warna.">A. E-mail HTML</button>
+      <button data-correct="true" data-feedback="Benar! Plain text murni tulisan biasa.">B. Plain Text</button>
+      <button data-correct="false" data-feedback="Salah. Forwarding adalah mekanik perpindahan surat otomatis.">C. Forwarding e-mail</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">5. Berikut ini yang BUKAN bagian dari penyokong domain brand e-mail komersial adalah...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Gmail disediakan oleh Google.">A. Gmail (Google)</button>
+      <button data-correct="true" data-feedback="Tepat! File Explorer buatan Microsoft, tapi itu kelola berkas, bukan E-mail.">B. File Explorer (Microsoft)</button>
+      <button data-correct="false" data-feedback="Salah. iCloud disediakan oleh Apple.">C. iCloud (Apple)</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">6. Model surel di mana pengguna mengakses kotak surat melalui peramban web disebut...</p>
+    <div class="quiz-options">
+      <button data-correct="true" data-feedback="Tepat! Web based e-mail dikontrol via halaman peramban online.">A. Web based e-mail</button>
+      <button data-correct="false" data-feedback="Salah. Plain text adalah jenis format visual isi pesannya.">B. Plain text</button>
+      <button data-correct="false" data-feedback="Salah. POP mail menarik email langsung ke klien lokal.">C. POP mail</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">7. Tokoh perintis yang mendemonstrasikan pengiriman surel di 1971 adalah...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Henry Mill merupakan perintis mesin tulis 1714.">A. Henry Mill</button>
+      <button data-correct="true" data-feedback="Benar! Ray Tomlinson merintis platform ARPANET SNDMSG 1971.">B. Ray Tomlinson</button>
+      <button data-correct="false" data-feedback="Salah. Christopher Sholes merakit piano sastra (mesin tulis bongsor).">C. Christopher Sholes</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">8. Pesan surel pionir apa yang pertama kali mendemonstrasikan pengiriman secara sukses di tahun 1971?</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Pesan surel pertama tidak mengucap halo.">A. "HELLO WORLD"</button>
+      <button data-correct="true" data-feedback="Tepat! Rentetan alfabet acak di papan tombol atas yang ia kirim.">B. "QWERTYUIOP"</button>
+      <button data-correct="false" data-feedback="Salah.">C. "TESTING EMAIL"</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">9. Jika kita mengirim surel yang mendukung penyisipan gambar dan modifikasi warna huruf, berarti kita menggunakan orientasi format...</p>
+    <div class="quiz-options">
+      <button data-correct="true" data-feedback="Benar! E-mail HTML mengakomodir format warna visual nan canggih.">A. Format E-mail HTML</button>
+      <button data-correct="false" data-feedback="Salah. Format baku tidak dukung warna/gambar.">B. Format Plain Text</button>
+      <button data-correct="false" data-feedback="Salah. Ini sistem perpindahan domain, bukan bentuk teksnya.">C. DNS</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">10. Mekanisme pemindahan arus transmisi dari suatu surel secara otomatis ke surel lain yang ditunjuk disebut...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Ini protokol klien surat lokal.">A. POP mail</button>
+      <button data-correct="false" data-feedback="Salah. URL adalah alamat link internet.">B. Uniform Source Locator (URL)</button>
+      <button data-correct="true" data-feedback="Tepat! Fitur penerusan (forward) otomasi aliran pesan.">C. Forwarding mail</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+</section>
+
+<!-- SUBBAB E -->
+<section>
+  <p class="eyebrow">E · APLIKASI PROFESIONAL</p>
+  <h2>E. Aplikasi Perkantoran (Office Suite)</h2>
+  <p class="lead">Aplikasi perkantoran adalah portofolio perangkat lunak yang disatukan secara komprehensif sebagai suatu suite (paket) guna menyokong ekosistem profesional dalam institusi.</p>
+  <div class="card-grid">
+    <article class="card accent">
+      <h3>Word Processor</h3>
+      <p>Peranti lunak untuk mengolah kata, mengeja frasa, serta menyusun dokumen pelaporan.</p>
+    </article>
+    <article class="card coral">
+      <h3>Spreadsheet</h3>
+      <p>Modul canggih untuk penataan angka komputasi matematis maupun kalkulasi statistik.</p>
+    </article>
+    <article class="card yellow">
+      <h3>Presentasi & Database</h3>
+      <p>Mencakup pemapar bahan presentasi, modul database, hingga <i>template publishing</i> majalah cetak.</p>
+    </article>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">E · EVOLUSI MEKANIS</p>
+  <h2>Sejarah Pengolah Kata</h2>
+  <p class="lead">Konsep arsitektur pengolahan alfabet berakar dari sejarah modifikasi instrumen mekanik rumit yang merintis evolusi pencatatan fisik menjadi peranti digital mutakhir.</p>
+  <div class="report-path">
+    <div class="step"><span>1714</span><strong>Henry Mill</strong><br>Meraih hak cipta perintis lewat alat pencetak mekanis berakurasi setara cetak industri.</div>
+    <div class="step"><span>Abad 19</span><strong>Christopher Sholes</strong><br>Menyumbangkan eksistensi inovasi mesin tulis mekanik bongsor ("piano sastra").</div>
+    <div class="step"><span>1950</span><strong>Ulrich Steinhilper</strong><br>Merintis fondasi sistem komputasi pembaca ejaan instrumen di tubuh perusahaan IBM.</div>
+  </div>
+  <p class="tip"><strong>Terobosan Elektromekanis:</strong> Disusul oleh invensi Mag Card IBM (1969), Floppy Disk daya tampung 80 halaman (1970), dan integrasi layar CRT (1978).</p>
+</section>
+
+<section>
+  <p class="eyebrow">E · MODERNISASI SOFTWARE</p>
+  <h2>Perangkat Lunak Pengolah Kata</h2>
+  <p class="lead">Di era PC modern, utilitas instrumen mekanik abstrak ini terlempar ke wujud perangkat lunak spesifik (word processor) yang dipelopori "star information system" pada tahun 1987.</p>
+  <div class="interactive-grid">
+    <button class="choice" data-target="wordToolDetail" data-detail="Kapabilitas ini mensahkan efisiensi perpindahan redaksional tanpa menuntut re-pengetikan ulang dari awal.">
+      <h3>Pemindahan Lintas Halaman</h3>
+      <p>Transfer fragmen dokumen instan</p>
+    </button>
+    <button class="choice" data-target="wordToolDetail" data-detail="Mampu menghapus konten teks maupun paragraf tanpa batasan kuantitas perombakan halaman.">
+      <h3>Penghapusan Ekstensif</h3>
+      <p>Fitur koreksi tanpa batasan</p>
+    </button>
+    <button class="choice" data-target="wordToolDetail" data-detail="Ragam fitur seperti MS Word, WordStar, dan OpenOffice Writer mampu mendeteksi letak kesalahan sintaks frasa otomatis.">
+      <h3>Identifikasi Kesalahan Ejaan</h3>
+      <p>Analisis akurasi penulisan</p>
+    </button>
+    <button class="choice" data-target="wordToolDetail" data-detail="Memanjakan khalayak dengan kapabilitas mereplikasi susunan materi demi akselerasi penyusunan laporan massal.">
+      <h3>Replikasi Dokumen Cepat</h3>
+      <p>Solusi template dan copy massal</p>
+    </button>
+  </div>
+  <p class="detail" id="wordToolDetail">Pilih keunggulan peranti word processor modern untuk melihat dampaknya.</p>
+</section>
+
+<!-- KUIS SUBBAB E -->
+<section>
+  <p class="eyebrow">LATIHAN SOAL · SUBBAB E</p>
+  <h2>Kuis: Aplikasi Perkantoran</h2>
+  
+  <div class="quiz-box">
+    <p class="quiz-question">1. Bundel portofolio perangkat lunak yang disatukan secara komprehensif sebagai suatu paket untuk menyokong profesional disebut...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. User Interface adalah desain tatap muka.">A. User Interface</button>
+      <button data-correct="true" data-feedback="Benar! Office Suite merujuk ke paket aplikasi kantoran (seperti Office365).">B. Office Suite</button>
+      <button data-correct="false" data-feedback="Salah. DNS adalah domain jaringan surel/web.">C. DNS Server</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">2. Peranti yang difungsikan untuk mengeja alfabet frasa dan menyusun dokumen pelaporan berbasis teks adalah...</p>
+    <div class="quiz-options">
+      <button data-correct="true" data-feedback="Benar! Word Processor adalah aplikasi pengolah kata.">A. Word Processor (Pengolah Kata)</button>
+      <button data-correct="false" data-feedback="Salah. Spreadsheet memanipulasi rentetan angka.">B. Spreadsheet (Pengolah Angka)</button>
+      <button data-correct="false" data-feedback="Salah. Database mengatur tabel big data raksasa.">C. Database (Basis Data)</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">3. Spreadsheet ditugaskan secara eksklusif dalam lingkungan kantor untuk...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Ini difasilitasi software presentasi.">A. Memaparkan bahan tayang presentasi slide</button>
+      <button data-correct="true" data-feedback="Benar! Spreadsheet seperti Excel bertugas mengkalkulasi matematis logis.">B. Melangsungkan penataan angka, komputasi, matematis, atau hitung statistik</button>
+      <button data-correct="false" data-feedback="Salah. Aplikasi ini Word Processor atau Template Publishing.">C. Menerbitkan desain visual majalah cetak dan surat kabar komersil</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">4. Arsitektur pencetak huruf pertama (1714) yang diakui mirip hasil kualitas cetak industri komersial dikreasikan oleh tokoh bernama...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Ia perintis e-mail di 1971.">A. Ray Tomlinson</button>
+      <button data-correct="false" data-feedback="Salah. Beliau penemu pondasi komputasi digital (IBM 1950).">B. Ulrich Steinhilper</button>
+      <button data-correct="true" data-feedback="Tepat! Hak cipta perintis di 1714 diraih Henry Mill.">C. Henry Mill</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">5. "Piano Sastra" adalah julukan unik dari suatu temuan pada abad 19. Siapakah kreator mesin tulis bongsor penemuan tersebut?</p>
+    <div class="quiz-options">
+      <button data-correct="true" data-feedback="Benar! Christopher Sholes membuat mesin tulis bongsor 'piano sastra'.">A. Christopher Latham Sholes</button>
+      <button data-correct="false" data-feedback="Salah. Ia dari IBM 1950.">B. Ulrich Steinhilper</button>
+      <button data-correct="false" data-feedback="Salah. Pembuat mesin cetak industri perintis.">C. Henry Mill</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">6. Konsep komputasi yang menjembatani ke peranti pembaca ejaan instrumen modern diawali tahun 1950 di dalam korporasi...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Apple (Mac) berdiri puluhan dekade setelahnya.">A. Apple Inc.</button>
+      <button data-correct="true" data-feedback="Benar! IBM mengawali terobosan pembaca ejaan elektromekanis ini.">B. International Business Machines (IBM)</button>
+      <button data-correct="false" data-feedback="Salah. Google eksis pasca lahirnya internet WWW.">C. Google Inc.</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">7. Sebelum Word Processor software lahir, Mag Card kreasi 1969 hanya bisa menampung 1 file arsip, tapi disempurnakan tahun 1970 dengan tampungan (80 arsip) yang disebut...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Memori ini belum lahir era 1970an.">A. USB Flashdisk</button>
+      <button data-correct="true" data-feedback="Tepat! Produk keping floppy disk sangat memukau di era 70an.">B. Floppy Disk (keping lempeng magnetik)</button>
+      <button data-correct="false" data-feedback="Salah. Ini layar monitor integrasi koreksi (CRT).">C. CRT Monitor</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">8. Integrasi Word Processor spesifik perangkat lunak dipelopori tahun 1987 lewat kemunculan sistem komprehensif bernama...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Office365 baru populer di dekade 2010an.">A. Office 365</button>
+      <button data-correct="false" data-feedback="Salah. OpenOffice adalah kloning open-source gratis generasi agak mutakhir.">B. OpenOffice</button>
+      <button data-correct="true" data-feedback="Benar! Star Information System pionir kapabilitas mendeteksi ejaan otomatis.">C. Star Information System</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">9. Kemampuan perangkat lunak pengolah kata dalam menyusun pelaporan massal tanpa menuliskan format huruf dan kalimat berulang kali disebut fitur...</p>
+    <div class="quiz-options">
+      <button data-correct="true" data-feedback="Tepat! Fitur replikasi template menghindari tulis ulang redaksional sama.">A. Replikasi template dan copy dokumen otomatis</button>
+      <button data-correct="false" data-feedback="Salah. OCR ini pengenalan abjad foto.">B. Pemindahan ekstensif</button>
+      <button data-correct="false" data-feedback="Salah. Fitur deteksi salah tik tidak memfotokopi data dokumen massal.">C. Deteksi kesalahan pengetikan</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+
+  <div class="quiz-box">
+    <p class="quiz-question">10. Fitur Word Processor modern yang memungkinkan penyusunan data dari dokumen bawah dipindah posisinya ke dokumen atas tanpa mengetik diistilahkan...</p>
+    <div class="quiz-options">
+      <button data-correct="false" data-feedback="Salah. Fitur deteksi ejaan hanya penunjuk salah grammar.">A. Identifikasi kesalahan kalimat</button>
+      <button data-correct="true" data-feedback="Benar! Fitur perpindahan redaksional mensahkan pertukaran fragmen ini instan.">B. Pemindahan lintas halaman (transfer fragmen dokumen)</button>
+      <button data-correct="false" data-feedback="Salah. Penghapusan membuat redaksi hilang total.">C. Penghapusan kuantitas tak terbatas</button>
+    </div>
+    <p class="quiz-feedback"></p>
+  </div>
+</section>
+
+<!-- SLIDE PENUTUP -->
+<section class="hero">
+  <p class="eyebrow">SELESAI · REFLEKSI</p>
+  <h2>Jembatan Komunikasi Era Digital.</h2>
+  <p class="lead">Melalui peramban tangguh, antarmuka interaktif, mesin pencari informatif, serta integrasi utuh portofolio aplikasi perkantoran, batas-batas komputasi kini ada di genggaman tangan Anda.</p>
+  <div class="hero-line"></div>
+  <p><span class="pill">Refleksi: utilitas komputasi manakah yang paling mendongkrak keseharianmu?</span></p>
+</section>
+
 </div></div>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
 <script>
+// Inisialisasi Reveal
 Reveal.initialize({hash:true,controls:true,progress:true,slideNumber:"c/t",transition:"convex",transitionSpeed:"fast",backgroundTransition:"zoom",width:1280,height:720});
-document.querySelectorAll(".file").forEach(function(item){item.addEventListener("click",function(){document.querySelectorAll(".file").forEach(function(x){x.classList.remove("active")});item.classList.add("active");document.getElementById("fileDetail").textContent=item.dataset.file})});
-document.querySelectorAll(".choice").forEach(function(item){item.addEventListener("click",function(){document.querySelectorAll(".choice").forEach(function(x){x.classList.remove("selected")});item.classList.add("selected");document.getElementById(item.dataset.target||"toolDetail").textContent=item.dataset.detail})});
-document.querySelectorAll(".tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".tab,.tab-panel").forEach(function(x){x.classList.remove("active")});tab.classList.add("active");document.getElementById(tab.dataset.tab).classList.add("active")})});
-var answered=false;document.querySelectorAll(".quiz-options button").forEach(function(button){button.addEventListener("click",function(){if(answered)return;answered=true;var correct=button.dataset.correct==="true";button.classList.add(correct?"correct":"wrong");document.getElementById("quizFeedback").textContent=correct?"Tepat! GUI menggunakan unsur visual seperti ikon, jendela, dan menu.":"Belum tepat. Antarmuka dengan ikon, jendela, dan menu disebut GUI.";document.getElementById("quizFeedback").style.color=correct?"#32864a":"#d45b45";document.getElementById("score").textContent="Skor: "+(correct?"1":"0")+" / 1"})});
+
+// Interaksi Komponen Interaktif (Detail File & Button Box)
+document.querySelectorAll(".file").forEach(function(item){
+    item.addEventListener("click",function(){
+        document.querySelectorAll(".file").forEach(function(x){x.classList.remove("active")});
+        item.classList.add("active");
+        document.getElementById("fileDetail").textContent=item.dataset.file;
+    })
+});
+
+document.querySelectorAll(".choice").forEach(function(item){
+    item.addEventListener("click",function(){
+        document.querySelectorAll(".choice").forEach(function(x){x.classList.remove("selected")});
+        item.classList.add("selected");
+        document.getElementById(item.dataset.target||"toolDetail").textContent=item.dataset.detail;
+    })
+});
+
+document.querySelectorAll(".tab").forEach(function(tab){
+    tab.addEventListener("click",function(){
+        document.querySelectorAll(".tab,.tab-panel").forEach(function(x){x.classList.remove("active")});
+        tab.classList.add("active");
+        document.getElementById(tab.dataset.tab).classList.add("active");
+    })
+});
+
+// LOGIKA KUIS MULTIPEL: Membuat state per masing-masing boks pertanyaan
+document.querySelectorAll(".quiz-box").forEach(function(quizContainer){
+    var answered = false; // State mengunci khusus pertanyaan ini saja
+    var buttons = quizContainer.querySelectorAll(".quiz-options button");
+    var feedbackEl = quizContainer.querySelector(".quiz-feedback");
+    
+    buttons.forEach(function(button){
+        button.addEventListener("click", function(){
+            if(answered) return; 
+            answered = true; // Kunci box soal ini
+            
+            var isCorrect = button.dataset.correct === "true";
+            var feedbackMsg = button.dataset.feedback;
+            
+            // Tambahkan kelas CSS (hijau/merah) pada tombol yang diklik
+            button.classList.add(isCorrect ? "correct" : "wrong");
+            
+            // Tampilkan umpan balik spesifik
+            if(feedbackEl){
+                feedbackEl.textContent = feedbackMsg;
+                feedbackEl.style.display = "block";
+                feedbackEl.style.color = isCorrect ? "#32864a" : "#d45b45";
+            }
+        });
+    });
+});
 </script>
 </body>
 </html>

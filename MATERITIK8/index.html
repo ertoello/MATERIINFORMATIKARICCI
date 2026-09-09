@@ -1,105 +1,1876 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Studio TIK | Kelas VIII</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
-<style>
-:root{--ink:#17253d;--blue:#2166f3;--sky:#dff4f4;--coral:#f4775c;--yellow:#ffd166;--paper:#fffaf0;--muted:#68758a;--line:#d8e2e4}
-*{box-sizing:border-box} body{background:var(--paper)}
-.reveal{color:var(--ink);font-family:"Patrick Hand",cursive;background:var(--paper);background-image:linear-gradient(rgba(33,102,243,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(33,102,243,.055) 1px,transparent 1px);background-size:32px 32px}
-.reveal .slides section{text-align:left;padding:5vh 6vw;height:100%;max-height:100%;overflow-y:auto;scrollbar-width:none;-ms-overflow-style:none}.reveal .slides section::-webkit-scrollbar{display:none;width:0;height:0}.reveal h1,.reveal h2,.reveal h3{font-family:"Caveat",cursive;text-transform:none;letter-spacing:0;color:var(--ink)}
-.reveal h1{font-size:3.3em;line-height:1.32;max-width:850px;margin-bottom:.45em}.reveal h2{font-size:2.4em;line-height:1.22;margin:0 0 .9em;border-left:8px solid var(--coral);padding-left:.3em}.reveal h3{font-family:inherit;font-size:1.08em;line-height:1.3}.reveal p,.reveal li{font-size:1.2em;line-height:1.75}.reveal p{color:var(--muted);margin:0 0 .8em}.reveal strong{color:var(--ink)}
-.eyebrow{color:var(--coral)!important;font-size:.55em!important;font-weight:bold;letter-spacing:.14em;text-transform:uppercase}.lead{font-size:1.08em!important;max-width:800px}.muted{color:var(--muted)}
-.hero{min-height:100%;display:flex!important;flex-direction:column;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(223,244,244,.92));overflow:hidden}.hero:after{content:"";position:absolute;right:-8%;top:9%;width:310px;height:310px;border:42px solid rgba(244,119,92,.2);border-radius:50%;box-shadow:0 0 0 25px rgba(255,209,102,.18),0 0 0 80px rgba(33,102,243,.08);z-index:-1}.hero-mark{display:grid;place-items:center;width:76px;height:76px;margin-bottom:28px;border-radius:22px;background:var(--ink);color:var(--yellow);font-size:2em;font-weight:bold;transform:rotate(-5deg)}.hero-line{width:120px;height:6px;margin:36px 0;background:var(--coral);border-radius:3px}.hero .lead{line-height:1.8;margin-bottom:1.25em}.pill{display:inline-block;padding:8px 14px;border-radius:99px;background:var(--yellow);color:var(--ink)!important;font-size:.58em!important;font-weight:bold}
-.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{min-height:190px;padding:20px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.88);box-shadow:0 10px 22px rgba(23,37,61,.08);transition:transform .2s,box-shadow .2s}.card:hover{transform:translateY(-6px);box-shadow:0 16px 30px rgba(23,37,61,.15)}.card-icon{display:block;margin-bottom:13px;color:var(--blue);font-size:1.8em;font-weight:bold}.card h3{margin:0 0 8px}.card p{font-size:1em;margin:0}.accent{border-top:5px solid var(--blue)}.coral{border-top:5px solid var(--coral)}.yellow{border-top:5px solid var(--yellow)}
-.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:center}.number-list{display:grid;gap:11px;padding:0;list-style:none}.number-list li{display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:center;margin:0;padding:12px;border-radius:8px;background:#fff;box-shadow:0 5px 14px rgba(23,37,61,.07)}.number{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;font-weight:bold;font-size:.65em}
-.interactive-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.choice,.quiz-options button{width:100%;padding:16px;border:2px solid var(--line);border-radius:9px;background:#fff;color:var(--ink);font:inherit;text-align:left;cursor:pointer;transition:.2s}.choice{min-height:125px}.choice:hover,.choice.selected{border-color:var(--blue);background:#e9f8f7;transform:translateY(-3px)}.choice h3{margin:0 0 7px}.choice p{margin:0;font-size:.82em}.detail{min-height:56px;margin-top:16px!important;padding:13px 16px;border-left:5px solid var(--coral);background:#fff;color:var(--ink)!important}
-.file-strip{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}.file{padding:13px 16px;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;box-shadow:0 5px 12px rgba(23,37,61,.06);transition:.2s}.file:hover,.file.active{background:var(--blue);color:#fff;transform:rotate(-2deg)}.file b{display:block;font-size:.7em}.file small{font-size:.55em;color:var(--muted)}.file.active small{color:#dff4f4}
-.report-path{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:stretch}.step{padding:16px 10px;border-bottom:5px solid var(--blue);background:#fff;text-align:center;transition:.2s}.step:hover{transform:translateY(-5px);border-color:var(--coral)}.step span{display:block;color:var(--coral);font-weight:bold;font-size:.8em}.step strong{display:block;margin-top:8px;font-size:.85em}.tip{margin-top:18px;padding:14px 18px;background:#fff4cf;border-radius:8px;color:var(--ink)!important}
-.tabs{display:flex;gap:8px;margin-bottom:15px}.tab{padding:10px 13px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);font:inherit;font-size:.6em;cursor:pointer}.tab.active{background:var(--ink);color:#fff}.tab-panel{display:none}.tab-panel.active{display:block;animation:fade .35s ease}.content-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}.quote{padding:26px;border-left:8px solid var(--yellow);background:#fff;font-family:Georgia,serif;font-size:1.1em!important;color:var(--ink)!important}.quote:before{content:"\201C";display:block;color:var(--coral);font-size:2.5em;height:25px}
-.lab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.lab{min-height:145px;padding:16px 14px;border-radius:8px;background:var(--ink);color:#fff;transition:.2s}.lab:hover{background:var(--blue);transform:translateY(-6px)}.lab b{display:block;color:var(--yellow);font-size:.85em;line-height:1.15}.lab p{margin-top:12px;color:#e8f4f5;font-size:.78em}
-.quiz-box{max-width:820px;padding:23px;background:#fff;border-radius:10px;box-shadow:0 12px 26px rgba(23,37,61,.1)}.quiz-question{color:var(--ink)!important;font-size:.9em!important;font-weight:bold}.quiz-options{display:grid;gap:9px}.quiz-options button{padding:11px 14px;font-size:.68em}.quiz-options button:hover{border-color:var(--blue);background:#e9f8f7}.quiz-options button.correct{background:#d9f4df;border-color:#43a864}.quiz-options button.wrong{background:#ffe0d9;border-color:var(--coral)}.quiz-feedback{min-height:25px;margin:12px 0 0!important;font-weight:bold}.score{color:var(--blue)!important;font-weight:bold}
-.reveal .progress{height:5px;color:var(--coral)}.reveal .controls{color:var(--blue)}.reveal .slide-number{color:var(--ink);background:transparent;font-size:14px}
-@keyframes slideReveal{from{opacity:0;transform:translateY(34px) scale(.96);filter:blur(5px)}to{opacity:1;transform:none;filter:blur(0)}}
-@keyframes popReveal{from{opacity:0;transform:translateY(24px) rotate(-2deg) scale(.92)}to{opacity:1;transform:none}}
-@keyframes lineReveal{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}
-.reveal .slides section.present h1,.reveal .slides section.present h2{animation:slideReveal .7s cubic-bezier(.2,.8,.2,1) both}
-.reveal .slides section.present>p,.reveal .slides section.present>.hero-mark,.reveal .slides section.present>.hero-line,.reveal .slides section.present>.pill{animation:slideReveal .65s .12s cubic-bezier(.2,.8,.2,1) both}
-.reveal .slides section.present>.hero-line{animation-name:lineReveal;animation-delay:.28s}
-.reveal .slides section.present .card,.reveal .slides section.present .choice,.reveal .slides section.present .file,.reveal .slides section.present .step,.reveal .slides section.present .lab,.reveal .slides section.present .number-list li,.reveal .slides section.present .quiz-box,.reveal .slides section.present .tabs{animation:popReveal .65s cubic-bezier(.2,.8,.2,1) both}
-.reveal .slides section.present .card:nth-child(2),.reveal .slides section.present .choice:nth-child(2),.reveal .slides section.present .file:nth-child(2),.reveal .slides section.present .step:nth-child(2),.reveal .slides section.present .lab:nth-child(2),.reveal .slides section.present .number-list li:nth-child(2){animation-delay:.12s}
-.reveal .slides section.present .card:nth-child(3),.reveal .slides section.present .choice:nth-child(3),.reveal .slides section.present .file:nth-child(3),.reveal .slides section.present .step:nth-child(3),.reveal .slides section.present .lab:nth-child(3),.reveal .slides section.present .number-list li:nth-child(3){animation-delay:.24s}
-.reveal .slides section.present .card:nth-child(4),.reveal .slides section.present .choice:nth-child(4),.reveal .slides section.present .file:nth-child(4),.reveal .slides section.present .step:nth-child(4),.reveal .slides section.present .lab:nth-child(4),.reveal .slides section.present .number-list li:nth-child(4){animation-delay:.36s}
-.reveal .slides section.present .card:nth-child(5),.reveal .slides section.present .file:nth-child(5),.reveal .slides section.present .step:nth-child(5),.reveal .slides section.present .lab:nth-child(5),.reveal .slides section.present .number-list li:nth-child(5){animation-delay:.48s}
-.reveal .slides section.present .card:nth-child(6){animation-delay:.6s}
-.reveal .slides section.present .detail,.reveal .slides section.present .tip,.reveal .slides section.present .quote{animation:slideReveal .7s .42s both}
-@media(prefers-reduced-motion:reduce){.reveal *,.reveal *:before,.reveal *:after{animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important}}
-@media(max-width:700px){.reveal .slides section{padding:4vh 5vw}.reveal h1{font-size:2.2em}.reveal h2{font-size:1.4em}.reveal p,.reveal li{font-size:.68em}.card-grid,.interactive-grid,.split,.content-layout{grid-template-columns:1fr}.card{min-height:0}.report-path{grid-template-columns:repeat(3,1fr)}.lab-grid{grid-template-columns:repeat(2,1fr)}.hero:after{width:180px;height:180px;border-width:25px}.quote{font-size:.9em!important}}
-/* Ukuran baca proyektor: diperbesar, tetapi tetap menyesuaikan lebar layar. */
-.reveal h1{font-size:clamp(3.3em,7vw,6.2em)}
-.reveal h2{font-size:clamp(2.4em,5vw,4.5em)}
-.reveal h3{font-size:clamp(1.08em,2.4vw,2em)}
-.reveal p,.reveal li{font-size:clamp(1.2em,2.6vw,2.35em);line-height:1.7}
-.reveal .lead{font-size:clamp(1.08em,2.8vw,2.5em)!important;line-height:1.75}
-.reveal .eyebrow{font-size:clamp(.55em,1.2vw,1.05em)!important}
-.card p,.choice p,.lab p{font-size:clamp(1em,2vw,1.75em)}
-.card h3,.choice h3{font-size:clamp(1.08em,2.4vw,2em)}
-.file b,.step strong,.lab b{font-size:clamp(.7em,1.8vw,1.45em)}
-.file small,.step span{font-size:clamp(.55em,1.2vw,1em)}
-.detail,.tip{font-size:clamp(1em,2.2vw,1.9em)!important;line-height:1.6}
-.tab,.quiz-options button{font-size:clamp(.6em,1.5vw,1.25em)}
-.quiz-question{font-size:clamp(.9em,2.2vw,1.9em)!important;line-height:1.6}
-.quote{font-size:clamp(1.1em,2.4vw,2em)!important;line-height:1.5}
-@media(max-width:700px){.reveal h1{font-size:clamp(2.2em,10vw,3.8em)}.reveal h2{font-size:clamp(1.7em,7vw,2.8em)}.reveal h3{font-size:clamp(1em,5vw,1.5em)}.reveal p,.reveal li{font-size:clamp(.8em,4vw,1.2em);line-height:1.6}.reveal .lead{font-size:clamp(.9em,4.5vw,1.35em)!important}.card p,.choice p,.lab p{font-size:clamp(.8em,3.5vw,1.1em)}.detail,.tip{font-size:clamp(.8em,3.8vw,1.15em)!important}.file b,.step strong,.lab b{font-size:clamp(.65em,3.5vw,1em)}.file small,.step span{font-size:clamp(.5em,2.8vw,.8em)}.tab,.quiz-options button{font-size:clamp(.55em,3vw,.9em)}.quiz-question{font-size:clamp(.8em,3.8vw,1.15em)!important}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio TIK | Kelas VIII</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Patrick+Hand&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --ink: #17253d;
+            --blue: #2166f3;
+            --sky: #dff4f4;
+            --coral: #f4775c;
+            --yellow: #ffd166;
+            --paper: #fffaf0;
+            --muted: #68758a;
+            --line: #d8e2e4
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            background: var(--paper)
+        }
+
+        .reveal {
+            color: var(--ink);
+            font-family: "Patrick Hand", cursive;
+            background: var(--paper);
+            background-image: linear-gradient(rgba(33, 102, 243, .055) 1px, transparent 1px), linear-gradient(90deg, rgba(33, 102, 243, .055) 1px, transparent 1px);
+            background-size: 32px 32px
+        }
+
+        .reveal .slides section {
+            text-align: left;
+            padding: 5vh 6vw;
+            height: 100%;
+            max-height: 100%;
+            overflow-y: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none
+        }
+
+        .reveal .slides section::-webkit-scrollbar {
+            display: none;
+            width: 0;
+            height: 0
+        }
+
+        .reveal h1,
+        .reveal h2,
+        .reveal h3 {
+            font-family: "Caveat", cursive;
+            text-transform: none;
+            letter-spacing: 0;
+            color: var(--ink)
+        }
+
+        .reveal h1 {
+            font-size: 3.3em;
+            line-height: 1.32;
+            max-width: 850px;
+            margin-bottom: .45em
+        }
+
+        .reveal h2 {
+            font-size: 2.4em;
+            line-height: 1.22;
+            margin: 0 0 .9em;
+            border-left: 8px solid var(--coral);
+            padding-left: .3em
+        }
+
+        .reveal h3 {
+            font-family: inherit;
+            font-size: 1.08em;
+            line-height: 1.3
+        }
+
+        .reveal p,
+        .reveal li {
+            font-size: 1.2em;
+            line-height: 1.75
+        }
+
+        .reveal p {
+            color: var(--muted);
+            margin: 0 0 .8em
+        }
+
+        .reveal strong {
+            color: var(--ink)
+        }
+
+        .eyebrow {
+            color: var(--coral) !important;
+            font-size: .55em !important;
+            font-weight: bold;
+            letter-spacing: .14em;
+            text-transform: uppercase
+        }
+
+        .lead {
+            font-size: 1.08em !important;
+            max-width: 800px
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        .hero {
+            min-height: 100%;
+            display: flex !important;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(255, 255, 255, .9), rgba(223, 244, 244, .92));
+            overflow: hidden
+        }
+
+        .hero:after {
+            content: "";
+            position: absolute;
+            right: -8%;
+            top: 9%;
+            width: 310px;
+            height: 310px;
+            border: 42px solid rgba(244, 119, 92, .2);
+            border-radius: 50%;
+            box-shadow: 0 0 0 25px rgba(255, 209, 102, .18), 0 0 0 80px rgba(33, 102, 243, .08);
+            z-index: -1
+        }
+
+        .hero-mark {
+            display: grid;
+            place-items: center;
+            width: 76px;
+            height: 76px;
+            margin-bottom: 28px;
+            border-radius: 22px;
+            background: var(--ink);
+            color: var(--yellow);
+            font-size: 2em;
+            font-weight: bold;
+            transform: rotate(-5deg)
+        }
+
+        .hero-line {
+            width: 120px;
+            height: 6px;
+            margin: 36px 0;
+            background: var(--coral);
+            border-radius: 3px
+        }
+
+        .hero .lead {
+            line-height: 1.8;
+            margin-bottom: 1.25em
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 99px;
+            background: var(--yellow);
+            color: var(--ink) !important;
+            font-size: .58em !important;
+            font-weight: bold
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px
+        }
+
+        .card {
+            min-height: 190px;
+            padding: 20px;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, .88);
+            box-shadow: 0 10px 22px rgba(23, 37, 61, .08);
+            transition: transform .2s, box-shadow .2s
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 30px rgba(23, 37, 61, .15)
+        }
+
+        .card-icon {
+            display: block;
+            margin-bottom: 13px;
+            color: var(--blue);
+            font-size: 1.8em;
+            font-weight: bold
+        }
+
+        .card h3 {
+            margin: 0 0 8px
+        }
+
+        .card p {
+            font-size: 1em;
+            margin: 0
+        }
+
+        .accent {
+            border-top: 5px solid var(--blue)
+        }
+
+        .coral {
+            border-top: 5px solid var(--coral)
+        }
+
+        .yellow {
+            border-top: 5px solid var(--yellow)
+        }
+
+        .split {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 28px;
+            align-items: center
+        }
+
+        .number-list {
+            display: grid;
+            gap: 11px;
+            padding: 0;
+            list-style: none
+        }
+
+        .number-list li {
+            display: grid;
+            grid-template-columns: 40px 1fr;
+            gap: 12px;
+            align-items: center;
+            margin: 0;
+            padding: 12px;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 5px 14px rgba(23, 37, 61, .07)
+        }
+
+        .number {
+            display: grid;
+            place-items: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--blue);
+            color: #fff;
+            font-weight: bold;
+            font-size: .65em
+        }
+
+        .interactive-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px
+        }
+
+        .choice,
+        .quiz-options button {
+            width: 100%;
+            padding: 16px;
+            border: 2px solid var(--line);
+            border-radius: 9px;
+            background: #fff;
+            color: var(--ink);
+            font: inherit;
+            text-align: left;
+            cursor: pointer;
+            transition: .2s
+        }
+
+        .choice {
+            min-height: 125px
+        }
+
+        .choice:hover,
+        .choice.selected {
+            border-color: var(--blue);
+            background: #e9f8f7;
+            transform: translateY(-3px)
+        }
+
+        .choice h3 {
+            margin: 0 0 7px
+        }
+
+        .choice p {
+            margin: 0;
+            font-size: .82em
+        }
+
+        .detail {
+            min-height: 56px;
+            margin-top: 16px !important;
+            padding: 13px 16px;
+            border-left: 5px solid var(--coral);
+            background: #fff;
+            color: var(--ink) !important
+        }
+
+        .file-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 22px 0
+        }
+
+        .file {
+            padding: 13px 16px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #fff;
+            cursor: pointer;
+            box-shadow: 0 5px 12px rgba(23, 37, 61, .06);
+            transition: .2s
+        }
+
+        .file:hover,
+        .file.active {
+            background: var(--blue);
+            color: #fff;
+            transform: rotate(-2deg)
+        }
+
+        .file b {
+            display: block;
+            font-size: .7em
+        }
+
+        .file small {
+            font-size: .55em;
+            color: var(--muted)
+        }
+
+        .file.active small {
+            color: #dff4f4
+        }
+
+        .report-path {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            align-items: stretch
+        }
+
+        .step {
+            padding: 16px 10px;
+            border-bottom: 5px solid var(--blue);
+            background: #fff;
+            text-align: center;
+            transition: .2s
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+            border-color: var(--coral)
+        }
+
+        .step span {
+            display: block;
+            color: var(--coral);
+            font-weight: bold;
+            font-size: .8em
+        }
+
+        .step strong {
+            display: block;
+            margin-top: 8px;
+            font-size: .85em
+        }
+
+        .tip {
+            margin-top: 18px;
+            padding: 14px 18px;
+            background: #fff4cf;
+            border-radius: 8px;
+            color: var(--ink) !important
+        }
+
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px
+        }
+
+        .tab {
+            padding: 10px 13px;
+            border: 1px solid var(--line);
+            border-radius: 7px;
+            background: #fff;
+            color: var(--ink);
+            font: inherit;
+            font-size: .6em;
+            cursor: pointer
+        }
+
+        .tab.active {
+            background: var(--ink);
+            color: #fff
+        }
+
+        .tab-panel {
+            display: none
+        }
+
+        .tab-panel.active {
+            display: block;
+            animation: fade .35s ease
+        }
+
+        .content-layout {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 24px;
+            align-items: center
+        }
+
+        .quote {
+            padding: 26px;
+            border-left: 8px solid var(--yellow);
+            background: #fff;
+            font-family: Georgia, serif;
+            font-size: 1.1em !important;
+            color: var(--ink) !important
+        }
+
+        .quote:before {
+            content: "\201C";
+            display: block;
+            color: var(--coral);
+            font-size: 2.5em;
+            height: 25px
+        }
+
+        .lab-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px
+        }
+
+        .lab {
+            min-height: 145px;
+            padding: 16px 14px;
+            border-radius: 8px;
+            background: var(--ink);
+            color: #fff;
+            transition: .2s
+        }
+
+        .lab:hover {
+            background: var(--blue);
+            transform: translateY(-6px)
+        }
+
+        .lab b {
+            display: block;
+            color: var(--yellow);
+            font-size: .85em;
+            line-height: 1.15
+        }
+
+        .lab p {
+            margin-top: 12px;
+            color: #e8f4f5;
+            font-size: .78em
+        }
+
+        /* Updated quiz-box for multiple questions */
+        .quiz-box {
+            max-width: 820px;
+            margin-bottom: 24px;
+            padding: 23px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 12px 26px rgba(23, 37, 61, .1)
+        }
+
+        .quiz-question {
+            color: var(--ink) !important;
+            font-size: .9em !important;
+            font-weight: bold
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 9px
+        }
+
+        .quiz-options button {
+            padding: 11px 14px;
+            font-size: .68em
+        }
+
+        .quiz-options button:hover {
+            border-color: var(--blue);
+            background: #e9f8f7
+        }
+
+        .quiz-options button.correct {
+            background: #d9f4df;
+            border-color: #43a864
+        }
+
+        .quiz-options button.wrong {
+            background: #ffe0d9;
+            border-color: var(--coral)
+        }
+
+        .quiz-feedback {
+            min-height: 25px;
+            margin: 12px 0 0 !important;
+            font-weight: bold;
+            display: none;
+        }
+
+        .reveal .progress {
+            height: 5px;
+            color: var(--coral)
+        }
+
+        .reveal .controls {
+            color: var(--blue)
+        }
+
+        .reveal .slide-number {
+            color: var(--ink);
+            background: transparent;
+            font-size: 14px
+        }
+
+        @keyframes slideReveal {
+            from {
+                opacity: 0;
+                transform: translateY(34px) scale(.96);
+                filter: blur(5px)
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+                filter: blur(0)
+            }
+        }
+
+        @keyframes popReveal {
+            from {
+                opacity: 0;
+                transform: translateY(24px) rotate(-2deg) scale(.92)
+            }
+
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        @keyframes lineReveal {
+            from {
+                transform: scaleX(0);
+                transform-origin: left
+            }
+
+            to {
+                transform: scaleX(1);
+                transform-origin: left
+            }
+        }
+
+        .reveal .slides section.present h1,
+        .reveal .slides section.present h2 {
+            animation: slideReveal .7s cubic-bezier(.2, .8, .2, 1) both
+        }
+
+        .reveal .slides section.present>p,
+        .reveal .slides section.present>.hero-mark,
+        .reveal .slides section.present>.hero-line,
+        .reveal .slides section.present>.pill {
+            animation: slideReveal .65s .12s cubic-bezier(.2, .8, .2, 1) both
+        }
+
+        .reveal .slides section.present>.hero-line {
+            animation-name: lineReveal;
+            animation-delay: .28s
+        }
+
+        .reveal .slides section.present .card,
+        .reveal .slides section.present .choice,
+        .reveal .slides section.present .file,
+        .reveal .slides section.present .step,
+        .reveal .slides section.present .lab,
+        .reveal .slides section.present .number-list li,
+        .reveal .slides section.present .quiz-box,
+        .reveal .slides section.present .tabs {
+            animation: popReveal .65s cubic-bezier(.2, .8, .2, 1) both
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+
+            .reveal *,
+            .reveal *:before,
+            .reveal *:after {
+                animation-duration: .01ms !important;
+                animation-delay: 0ms !important;
+                transition-duration: .01ms !important
+            }
+        }
+
+        @media(max-width:700px) {
+            .reveal .slides section {
+                padding: 4vh 5vw
+            }
+
+            .reveal h1 {
+                font-size: 2.2em
+            }
+
+            .reveal h2 {
+                font-size: 1.4em
+            }
+
+            .reveal p,
+            .reveal li {
+                font-size: .68em
+            }
+
+            .card-grid,
+            .interactive-grid,
+            .split,
+            .content-layout {
+                grid-template-columns: 1fr
+            }
+
+            .card {
+                min-height: 0
+            }
+
+            .report-path {
+                grid-template-columns: repeat(3, 1fr)
+            }
+
+            .lab-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .hero:after {
+                width: 180px;
+                height: 180px;
+                border-width: 25px
+            }
+
+            .quote {
+                font-size: .9em !important
+            }
+        }
+
+        /* Ukuran baca proyektor: diperbesar, tetapi tetap menyesuaikan lebar layar. */
+        .reveal h1 {
+            font-size: clamp(3.3em, 7vw, 6.2em)
+        }
+
+        .reveal h2 {
+            font-size: clamp(2.4em, 5vw, 4.5em)
+        }
+
+        .reveal h3 {
+            font-size: clamp(1.08em, 2.4vw, 2em)
+        }
+
+        .reveal p,
+        .reveal li {
+            font-size: clamp(1.2em, 2.6vw, 2.35em);
+            line-height: 1.7
+        }
+
+        .reveal .lead {
+            font-size: clamp(1.08em, 2.8vw, 2.5em) !important;
+            line-height: 1.75
+        }
+
+        .reveal .eyebrow {
+            font-size: clamp(.55em, 1.2vw, 1.05em) !important
+        }
+
+        .card p,
+        .choice p,
+        .lab p {
+            font-size: clamp(1em, 2vw, 1.75em)
+        }
+
+        .card h3,
+        .choice h3 {
+            font-size: clamp(1.08em, 2.4vw, 2em)
+        }
+
+        .file b,
+        .step strong,
+        .lab b {
+            font-size: clamp(.7em, 1.8vw, 1.45em)
+        }
+
+        .file small,
+        .step span {
+            font-size: clamp(.55em, 1.2vw, 1em)
+        }
+
+        .detail,
+        .tip {
+            font-size: clamp(1em, 2.2vw, 1.9em) !important;
+            line-height: 1.6
+        }
+
+        .tab,
+        .quiz-options button {
+            font-size: clamp(.6em, 1.5vw, 1.25em)
+        }
+
+        .quiz-question {
+            font-size: clamp(.9em, 2.2vw, 1.9em) !important;
+            line-height: 1.6
+        }
+
+        .quote {
+            font-size: clamp(1.1em, 2.4vw, 2em) !important;
+            line-height: 1.5
+        }
+
+        @media(max-width:700px) {
+            .reveal h1 {
+                font-size: clamp(2.2em, 10vw, 3.8em)
+            }
+
+            .reveal h2 {
+                font-size: clamp(1.7em, 7vw, 2.8em)
+            }
+
+            .reveal h3 {
+                font-size: clamp(1em, 5vw, 1.5em)
+            }
+
+            .reveal p,
+            .reveal li {
+                font-size: clamp(.8em, 4vw, 1.2em);
+                line-height: 1.6
+            }
+
+            .reveal .lead {
+                font-size: clamp(.9em, 4.5vw, 1.35em) !important
+            }
+
+            .card p,
+            .choice p,
+            .lab p {
+                font-size: clamp(.8em, 3.5vw, 1.1em)
+            }
+
+            .detail,
+            .tip {
+                font-size: clamp(.8em, 3.8vw, 1.15em) !important
+            }
+
+            .file b,
+            .step strong,
+            .lab b {
+                font-size: clamp(.65em, 3.5vw, 1em)
+            }
+
+            .file small,
+            .step span {
+                font-size: clamp(.5em, 2.8vw, .8em)
+            }
+
+            .tab,
+            .quiz-options button {
+                font-size: clamp(.55em, 3vw, .9em)
+            }
+
+            .quiz-question {
+                font-size: clamp(.8em, 3.8vw, 1.15em) !important
+            }
+        }
+    </style>
 </head>
+
 <body>
-<div class="reveal"><div class="slides">
-<section class="hero"><span class="hero-mark">TIK</span><p class="eyebrow">TEKNOLOGI INFORMASI DAN KOMUNIKASI · KELAS VIII</p><h1>Teknologi yang membuat ide bergerak.</h1><div class="hero-line"></div><p class="lead">Kenali aplikasi, susun laporan, rangkum konten, lalu bereksperimen di laboratorium maya.</p><p><span class="pill">Mulai dengan tombol panah atau klik kontrol</span></p></section>
+    <div class="reveal">
+        <div class="slides">
 
-<section><p class="eyebrow">01 · PETA BESAR</p><h2>A. Perangkat Lunak Aplikasi dan Fitur Aplikasi</h2><p class="lead">Perangkat lunak adalah komponen komputer yang membantu manusia menyelesaikan pekerjaan: menulis, menghitung, menggambar, merekam, dan mempresentasikan gagasan.</p><div class="card-grid"><article class="card accent"><span class="card-icon">01</span><h3>Desktop</h3><p>Berjalan langsung pada komputer atau laptop.</p></article><article class="card coral"><span class="card-icon">02</span><h3>Web</h3><p>Dibuka melalui peramban dan umumnya membutuhkan internet.</p></article><article class="card yellow"><span class="card-icon">03</span><h3>Mobile</h3><p>Dirancang untuk perangkat bergerak seperti smartphone.</p></article></div></section>
+            <!-- JUDUL -->
+            <section class="hero"><span class="hero-mark">TIK</span>
+                <p class="eyebrow">TEKNOLOGI INFORMASI DAN KOMUNIKASI · KELAS VIII</p>
+                <h1>Teknologi yang membuat ide bergerak.</h1>
+                <div class="hero-line"></div>
+                <p class="lead">Kenali aplikasi, susun laporan, rangkum konten, lalu bereksperimen di laboratorium maya.
+                </p>
+                <p><span class="pill">Mulai dengan tombol panah atau klik kontrol</span></p>
+            </section>
 
-<section><p class="eyebrow">01 · KLASIFIKASI SOFTWARE</p><h2>Klasifikasi aplikasi berdasarkan kegunaannya</h2><p class="lead">Aplikasi berasal dari kata Inggris <em>application</em> yang berarti penerapan. Berdasarkan kegunaannya, aplikasi dapat dikelompokkan seperti berikut.</p><div class="card-grid"><article class="card accent"><h3>Business Software</h3><p>Untuk keperluan bisnis, misalnya sistem inventaris.</p></article><article class="card coral"><h3>Engineering &amp; Scientific</h3><p>Membantu penyelesaian masalah non-algoritmik, misalnya CAD.</p></article><article class="card yellow"><h3>Personal Computer</h3><p>Perangkat lunak pribadi, misalnya aplikasi pengolah kata.</p></article><article class="card accent"><h3>Real Time Software</h3><p>Mengendalikan sistem di dunia nyata, misalnya sistem pesawat.</p></article><article class="card coral"><h3>System Software</h3><p>Mengelola komputer, misalnya Windows, Linux, dan macOS.</p></article><article class="card yellow"><h3>Web Based Software</h3><p>Menjadi media penghubung internet, misalnya media sosial.</p></article></div></section>
+            <!-- SUBBAB A -->
+            <section>
+                <p class="eyebrow">01 · PETA BESAR</p>
+                <h2>A. Perangkat Lunak Aplikasi dan Fitur Aplikasi</h2>
+                <p class="lead">Perangkat lunak adalah komponen komputer yang membantu manusia menyelesaikan pekerjaan:
+                    menulis, menghitung, menggambar, merekam, dan mempresentasikan gagasan.</p>
+                <div class="card-grid">
+                    <article class="card accent"><span class="card-icon">01</span>
+                        <h3>Desktop</h3>
+                        <p>Berjalan langsung pada komputer atau laptop.</p>
+                    </article>
+                    <article class="card coral"><span class="card-icon">02</span>
+                        <h3>Web</h3>
+                        <p>Dibuka melalui peramban dan umumnya membutuhkan internet.</p>
+                    </article>
+                    <article class="card yellow"><span class="card-icon">03</span>
+                        <h3>Mobile</h3>
+                        <p>Dirancang untuk perangkat bergerak seperti smartphone.</p>
+                    </article>
+                </div>
+            </section>
+            <section>
+                <p class="eyebrow">01 · KLASIFIKASI SOFTWARE</p>
+                <h2>Klasifikasi aplikasi berdasarkan kegunaannya</h2>
+                <p class="lead">Aplikasi berasal dari kata Inggris <em>application</em> yang berarti penerapan.
+                    Berdasarkan kegunaannya, aplikasi dapat dikelompokkan seperti berikut.</p>
+                <div class="card-grid">
+                    <article class="card accent">
+                        <h3>Business Software</h3>
+                        <p>Untuk keperluan bisnis, misalnya sistem inventaris.</p>
+                    </article>
+                    <article class="card coral">
+                        <h3>Engineering &amp; Scientific</h3>
+                        <p>Membantu penyelesaian masalah non-algoritmik, misalnya CAD.</p>
+                    </article>
+                    <article class="card yellow">
+                        <h3>Personal Computer</h3>
+                        <p>Perangkat lunak pribadi, misalnya aplikasi pengolah kata.</p>
+                    </article>
+                    <article class="card accent">
+                        <h3>Real Time Software</h3>
+                        <p>Mengendalikan sistem di dunia nyata, misalnya sistem pesawat.</p>
+                    </article>
+                    <article class="card coral">
+                        <h3>System Software</h3>
+                        <p>Mengelola komputer, misalnya Windows, Linux, dan macOS.</p>
+                    </article>
+                    <article class="card yellow">
+                        <h3>Web Based Software</h3>
+                        <p>Menjadi media penghubung internet, misalnya media sosial.</p>
+                    </article>
+                </div>
+            </section>
+            <section>
+                <p class="eyebrow">01 · KENALI FORMATNYA</p>
+                <h2>Ekstensi File sebagai Identitas Data</h2>
+                <p>Klik kartu untuk melihat jenis aplikasi yang cocok dengan setiap format file.</p>
+                <div class="file-strip"><button class="file active"
+                        data-file="Dokumen kata: cocok untuk laporan dan naskah."><b>.DOCX</b><small>pengolah
+                            kata</small></button><button class="file"
+                        data-file="Spreadsheet: cocok untuk angka, tabel, dan data."><b>.XLSX</b><small>pengolah
+                            angka</small></button><button class="file"
+                        data-file="Presentasi: cocok untuk menyajikan ide dalam slide."><b>.PPTX</b><small>presentasi</small></button><button
+                        class="file"
+                        data-file="Gambar: JPEG, PNG, BMP, PSD, AI, EPS, dan SVG."><b>.PNG</b><small>gambar</small></button><button
+                        class="file"
+                        data-file="Audio dan video: MP3, WAV, MP4, WMV, dan FLV."><b>.MP4</b><small>audio/video</small></button><button
+                        class="file"
+                        data-file="Dokumen portabel: mudah dibagikan dan tampil konsisten."><b>.PDF</b><small>portabel</small></button>
+                </div>
+                <p class="detail" id="fileDetail">Dokumen kata: cocok untuk laporan dan naskah.</p>
+            </section>
+            <section>
+                <p class="eyebrow">01 · OBJEK APLIKASI</p>
+                <h2>Pengolahan Objek Aplikasi dan Penyimpanan File</h2>
+                <div class="split">
+                    <div>
+                        <p class="lead">Objek utama diolah pada jendela aplikasi, lalu disimpan ke media penyimpanan.
+                            Format dan ekstensi di akhir nama file membantu kita mengenali jenis data tersebut.</p><span
+                            class="pill">nama-file.ekstensi</span>
+                    </div>
+                    <ol class="number-list">
+                        <li><span class="number">01</span><span><strong>Word processor</strong><br>.doc, .docx, .rtf,
+                                .odt</span></li>
+                        <li><span class="number">02</span><span><strong>Spreadsheet</strong><br>.xls, .xlsx, .ods,
+                                .csv</span></li>
+                        <li><span class="number">03</span><span><strong>Presentation</strong><br>.ppt, .pptx,
+                                .odp</span></li>
+                    </ol>
+                </div>
+            </section>
+            <section>
+                <p class="eyebrow">01 · FORMAT MEDIA</p>
+                <h2>Format File Gambar, Audio, Video, dan Dokumen</h2>
+                <div class="card-grid">
+                    <article class="card accent"><span class="card-icon">BMP</span>
+                        <h3>Pengolah gambar</h3>
+                        <p><strong>Bitmap:</strong> .jpeg, .png, .bmp, .psd.<br><strong>Vektor:</strong> .ai, .eps,
+                            .svg.</p>
+                    </article>
+                    <article class="card coral"><span class="card-icon">AV</span>
+                        <h3>Audio dan video</h3>
+                        <p>Format yang umum digunakan antara lain .mp4, .wmv, .flv, .mp3, dan .wav.</p>
+                    </article>
+                    <article class="card yellow"><span class="card-icon">PDF</span>
+                        <h3>Dokumen portabel</h3>
+                        <p>.pdf dirancang agar dokumen mudah dibagikan dan tampil konsisten pada perangkat berbeda.</p>
+                    </article>
+                </div>
+            </section>
+            <section>
+                <p class="eyebrow">01 · ANTARMUKA</p>
+                <h2>Antarmuka Grafis dan Fitur Aplikasi</h2>
+                <p class="lead">GUI atau Graphic User Interface membuat aplikasi terasa dekat: pengguna berinteraksi
+                    melalui kursor, menu, mouse, ikon, dan jendela.</p>
+                <div class="interactive-grid"><button class="choice"
+                        data-detail="Cut (CTRL+X) memindahkan objek ke tempat penyimpanan sementara, lalu dapat ditempel di lokasi baru.">
+                        <h3>Cut</h3>
+                        <p>Memindahkan objek · CTRL+X</p>
+                    </button><button class="choice"
+                        data-detail="Copy (CTRL+C) menyalin objek tanpa menghilangkan versi aslinya.">
+                        <h3>Copy</h3>
+                        <p>Menyalin objek · CTRL+C</p>
+                    </button><button class="choice"
+                        data-detail="Paste (CTRL+V) menempelkan objek yang sebelumnya di-cut atau di-copy.">
+                        <h3>Paste</h3>
+                        <p>Menempelkan objek · CTRL+V</p>
+                    </button><button class="choice"
+                        data-detail="Screenshot menangkap tampilan layar. PrintScreen menangkap seluruh layar, ALT + PrintScreen hanya jendela aktif.">
+                        <h3>Screenshot</h3>
+                        <p>Menangkap layar · PrintScreen</p>
+                    </button></div>
+                <p class="detail" id="toolDetail">Pilih satu fitur untuk melihat cara kerjanya.</p>
+            </section>
 
-<section><p class="eyebrow">01 · KENALI FORMATNYA</p><h2>Ekstensi File sebagai Identitas Data</h2><p>Klik kartu untuk melihat jenis aplikasi yang cocok dengan setiap format file.</p><div class="file-strip"><button class="file active" data-file="Dokumen kata: cocok untuk laporan dan naskah."><b>.DOCX</b><small>pengolah kata</small></button><button class="file" data-file="Spreadsheet: cocok untuk angka, tabel, dan data."><b>.XLSX</b><small>pengolah angka</small></button><button class="file" data-file="Presentasi: cocok untuk menyajikan ide dalam slide."><b>.PPTX</b><small>presentasi</small></button><button class="file" data-file="Gambar: JPEG, PNG, BMP, PSD, AI, EPS, dan SVG."><b>.PNG</b><small>gambar</small></button><button class="file" data-file="Audio dan video: MP3, WAV, MP4, WMV, dan FLV."><b>.MP4</b><small>audio/video</small></button><button class="file" data-file="Dokumen portabel: mudah dibagikan dan tampil konsisten."><b>.PDF</b><small>portabel</small></button></div><p class="detail" id="fileDetail">Dokumen kata: cocok untuk laporan dan naskah.</p></section>
+            <!-- KUIS SUBBAB A -->
+            <section>
+                <p class="eyebrow">LATIHAN SOAL · SUBBAB A</p>
+                <h2>Kuis: Perangkat Lunak Aplikasi</h2>
 
-<section><p class="eyebrow">01 · OBJEK APLIKASI</p><h2>Pengolahan Objek Aplikasi dan Penyimpanan File</h2><div class="split"><div><p class="lead">Objek utama diolah pada jendela aplikasi, lalu disimpan ke media penyimpanan. Format dan ekstensi di akhir nama file membantu kita mengenali jenis data tersebut.</p><span class="pill">nama-file.ekstensi</span></div><ol class="number-list"><li><span class="number">01</span><span><strong>Word processor</strong><br>.doc, .docx, .rtf, .odt</span></li><li><span class="number">02</span><span><strong>Spreadsheet</strong><br>.xls, .xlsx, .ods, .csv</span></li><li><span class="number">03</span><span><strong>Presentation</strong><br>.ppt, .pptx, .odp</span></li></ol></div></section>
+                <div class="quiz-box">
+                    <p class="quiz-question">1. Apa pengertian dari perangkat lunak aplikasi?</p>
+                    <div class="quiz-options">
+                        <button data-correct="true"
+                            data-feedback="Tepat! Perangkat lunak adalah komponen program yang membantu pekerjaan manusia.">A.
+                            Program komputer yang membantu menyelesaikan tugas manusia</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Fisik komputer disebut perangkat keras (hardware).">B. Komponen keras
+                            fisik penyusun komputer</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Ini masuk ke dalam infrastruktur jaringan.">C. Kabel penghubung
+                            jaringan internet</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
 
-<section><p class="eyebrow">01 · FORMAT MEDIA</p><h2>Format File Gambar, Audio, Video, dan Dokumen</h2><div class="card-grid"><article class="card accent"><span class="card-icon">BMP</span><h3>Pengolah gambar</h3><p><strong>Bitmap:</strong> .jpeg, .png, .bmp, .psd.<br><strong>Vektor:</strong> .ai, .eps, .svg.</p></article><article class="card coral"><span class="card-icon">AV</span><h3>Audio dan video</h3><p>Format yang umum digunakan antara lain .mp4, .wmv, .flv, .mp3, dan .wav.</p></article><article class="card yellow"><span class="card-icon">PDF</span><h3>Dokumen portabel</h3><p>.pdf dirancang agar dokumen mudah dibagikan dan tampil konsisten pada perangkat berbeda.</p></article></div></section>
+                <div class="quiz-box">
+                    <p class="quiz-question">2. Aplikasi yang berjalan langsung pada instalasi komputer atau laptop
+                        termasuk ke dalam kelompok...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false" data-feedback="Salah. Aplikasi web butuh browser internet.">A.
+                            Web-based application</button>
+                        <button data-correct="false" data-feedback="Salah. Aplikasi mobile untuk smartphone/tablet.">B.
+                            Mobile application</button>
+                        <button data-correct="true"
+                            data-feedback="Benar! Desktop app dipasang & berjalan langsung di memori lokal.">C. Desktop
+                            application</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
 
-<section><p class="eyebrow">01 · ANTARMUKA</p><h2>Antarmuka Grafis dan Fitur Aplikasi</h2><p class="lead">GUI atau Graphic User Interface membuat aplikasi terasa dekat: pengguna berinteraksi melalui kursor, menu, mouse, ikon, dan jendela.</p><div class="interactive-grid"><button class="choice" data-detail="Cut (CTRL+X) memindahkan objek ke tempat penyimpanan sementara, lalu dapat ditempel di lokasi baru."><h3>Cut</h3><p>Memindahkan objek · CTRL+X</p></button><button class="choice" data-detail="Copy (CTRL+C) menyalin objek tanpa menghilangkan versi aslinya."><h3>Copy</h3><p>Menyalin objek · CTRL+C</p></button><button class="choice" data-detail="Paste (CTRL+V) menempelkan objek yang sebelumnya di-cut atau di-copy."><h3>Paste</h3><p>Menempelkan objek · CTRL+V</p></button><button class="choice" data-detail="Screenshot menangkap tampilan layar. PrintScreen menangkap seluruh layar, ALT + PrintScreen hanya jendela aktif."><h3>Screenshot</h3><p>Menangkap layar · PrintScreen</p></button></div><p class="detail" id="toolDetail">Pilih satu fitur untuk melihat cara kerjanya.</p></section>
+                <div class="quiz-box">
+                    <p class="quiz-question">3. Web based software merupakan jenis perangkat lunak yang dirancang
+                        untuk...</p>
+                    <div class="quiz-options">
+                        <button data-correct="true"
+                            data-feedback="Benar! Aplikasi web dibuka melalui peramban (browser).">A. Dibuka melalui
+                            aplikasi peramban (browser)</button>
+                        <button data-correct="false" data-feedback="Salah. Ini fungsi perangkat keras.">B. Ditanam
+                            secara permanen di dalam motherboard</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Mengendalikan sistem adalah fungsi system software.">C. Mengendalikan
+                            sistem di dunia nyata</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
 
-<section><p class="eyebrow">02 · PROYEK KARYA TULIS</p><h2>B. Pembuatan Laporan</h2><p class="lead">Laporan dibuat secara sistematis, objektif, dan benar. Klik urutannya untuk menjelaskan bagian yang sedang dibahas.</p><div class="report-path"><div class="step"><span>01</span><strong>Kover</strong></div><div class="step"><span>02</span><strong>Pengantar</strong></div><div class="step"><span>03</span><strong>Daftar isi</strong></div><div class="step"><span>04</span><strong>Pendahuluan</strong></div><div class="step"><span>05</span><strong>Pembahasan</strong></div><div class="step"><span>06</span><strong>Penutup</strong></div></div><p class="tip"><strong>Tip:</strong> gunakan Heading 1 dan Heading 2 agar Table of Contents dapat dibuat otomatis.</p></section>
+                <div class="quiz-box">
+                    <p class="quiz-question">4. Ekstensi file .XLSX dan .CSV secara khusus cocok digunakan untuk
+                        menyimpan objek data berupa...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false"
+                            data-feedback="Salah. Dokumen laporan biasanya menggunakan format Word (.docx).">A. Dokumen
+                            laporan makalah</button>
+                        <button data-correct="true"
+                            data-feedback="Tepat! Keduanya adalah format data pengolah angka (spreadsheet).">B. Angka,
+                            rumus, dan tabel spreadsheet</button>
+                        <button data-correct="false" data-feedback="Salah. Ini format gambar seperti .jpg atau .png.">C.
+                            Gambar visual presentasi</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
 
-<section><p class="eyebrow">02 · DETAIL LAPORAN</p><h2>Isi setiap bagian dengan tujuan yang jelas</h2><div class="card-grid"><article class="card accent"><h3>Kover</h3><p>Memuat judul, nama pembuat, dan keterangan singkat. Di Word: <strong>Insert &gt; Cover Page</strong>.</p></article><article class="card coral"><h3>Kata Pengantar</h3><p>Ulasan singkat agar pembaca memahami gambaran umum sebelum masuk pembahasan.</p></article><article class="card yellow"><h3>Daftar Isi</h3><p>Memudahkan pembaca melihat urutan bab. Gunakan <strong>References &gt; Table of Contents</strong>.</p></article><article class="card accent"><h3>Pendahuluan</h3><p>Menjelaskan latar belakang dan tujuan. Rapikan format dengan <strong>Layout &gt; Section Breaks</strong>.</p></article><article class="card coral"><h3>Pembahasan</h3><p>Bagian inti yang dapat dilengkapi foto, gambar, dan data pendukung.</p></article><article class="card yellow"><h3>Penutup</h3><p>Kesimpulan sederhana yang sesuai dengan isi pembahasan laporan.</p></article></div><p class="tip"><strong>Nomor halaman:</strong> gunakan <strong>Insert &gt; Page Number</strong>. Atur judul bab dengan Styles: Heading 1 dan Heading 2.</p></section>
+                <div class="quiz-box">
+                    <p class="quiz-question">5. Berikut ini yang merupakan contoh dari ekstensi format dokumen portabel
+                        adalah...</p>
+                    <div class="quiz-options">
+                        <button data-correct="true"
+                            data-feedback="Benar! .PDF (Portable Document Format) dirancang konsisten di berbagai layar.">A.
+                            .PDF</button>
+                        <button data-correct="false" data-feedback="Salah. Ini format ekstensi presentasi.">B.
+                            .PPTX</button>
+                        <button data-correct="false" data-feedback="Salah. Ini format ekstensi audio suara.">C.
+                            .WAV</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
 
-<section><p class="eyebrow">03 · KONTEN DIGITAL</p><h2>Satu ide, banyak wujud</h2><div class="tabs"><button class="tab active" data-tab="text">Tulisan</button><button class="tab" data-tab="image">Gambar</button><button class="tab" data-tab="audio">Audio</button><button class="tab" data-tab="video">Video</button><button class="tab" data-tab="book">Buku digital</button></div><div class="content-layout"><div><div class="tab-panel active" id="text"><h3>Konten tulisan</h3><p>Artikel website, cerpen, puisi, copywriting, e-book, dan caption media sosial.</p></div><div class="tab-panel" id="image"><h3>Konten gambar</h3><p>Foto, spanduk, flyer, dan infografis menyampaikan pesan secara visual.</p></div><div class="tab-panel" id="audio"><h3>Konten audio</h3><p>Podcast, siaran radio, file MP3, dan voice note berbasis suara.</p></div><div class="tab-panel" id="video"><h3>Konten video</h3><p>Film, iklan, YouTube, dan TikTok menggabungkan suara dengan gambar bergerak.</p></div><div class="tab-panel" id="book"><h3>Buku digital</h3><p>Hemat ruang dan kertas, ukuran huruf dapat diatur, interaktif, serta mudah ditautkan ke sumber.</p></div></div><p class="quote">Content creator mengubah informasi menjadi pengalaman yang bisa dibaca, dilihat, didengar, dan dibagikan.</p></div></section>
+                <div class="quiz-box">
+                    <p class="quiz-question">6. Jika Anda ingin menyalin suatu objek atau teks pada antarmuka tanpa
+                        menghilangkan sumber aslinya, pintasan keyboard yang benar adalah...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false"
+                            data-feedback="Salah. CTRL+X adalah perintah untuk memotong (Cut).">A. CTRL + X</button>
+                        <button data-correct="true" data-feedback="Benar! CTRL+C adalah perintah salin (Copy).">B. CTRL
+                            + C</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. CTRL+V adalah perintah menempelkan (Paste).">C. CTRL + V</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
 
-<section><p class="eyebrow">03 · BACAAN DIGITAL</p><h2>Mengapa buku digital menarik?</h2><div class="card-grid"><article class="card accent"><h3>Lebih terjangkau</h3><p>Biaya distribusi dan penyimpanan dapat lebih rendah daripada buku cetak.</p></article><article class="card coral"><h3>Fleksibel</h3><p>Ukuran huruf dapat diatur sesuai kebutuhan pembaca.</p></article><article class="card yellow"><h3>Interaktif</h3><p>Dapat terhubung dengan video, audio, dan tautan sumber.</p></article><article class="card accent"><h3>Hemat tempat</h3><p>Banyak buku tersimpan dalam perangkat tanpa membutuhkan lemari.</p></article><article class="card coral"><h3>Ramah lingkungan</h3><p>Mengurangi kebutuhan kertas cetak.</p></article><article class="card yellow"><h3>Mudah dibagikan</h3><p>Konten dapat dikirim secara online melalui surel, blog, dan media sosial.</p></article></div></section>
+                <div class="quiz-box">
+                    <p class="quiz-question">7. Apa fungsi utama dari pintasan tombol PrintScreen pada keyboard?</p>
+                    <div class="quiz-options">
+                        <button data-correct="false" data-feedback="Salah. Itu adalah fungsi printer pencetak fisik.">A.
+                            Mencetak dokumen keras lewat printer</button>
+                        <button data-correct="false" data-feedback="Salah. Itu fungsi Delete / Backspace.">B. Menghapus
+                            objek di layar monitor</button>
+                        <button data-correct="true"
+                            data-feedback="Tepat! PrintScreen digunakan untuk fitur Screenshot (tangkap layar).">C.
+                            Menangkap seluruh tampilan grafis pada layar</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
 
-<section><p class="eyebrow">04 · LABORATORIUM MAYA</p><h2>Eksperimen tanpa batas ruang</h2><p class="lead">Laboratorium maya adalah simulasi komputer dari laboratorium tatap muka. Ia membantu siswa memahami konsep dan bereksperimen saat alat fisik terbatas.</p><div class="lab-grid"><article class="lab"><b>Kemdikbud</b><p>Simulasi, teori, dan lembar kerja dari Rumah Belajar.</p></article><article class="lab"><b>PhET</b><p>Fisika, kimia, biologi, matematika, dan ilmu kebumian.</p></article><article class="lab"><b>NOVA Labs</b><p>Iklim, evolusi, keamanan siber, matahari, dan mini-game.</p></article><article class="lab"><b>Concord</b><p>Modul STEM interaktif dengan fokus analisis data.</p></article><article class="lab"><b>Chemistry</b><p>Portal Komisi Eropa untuk pembelajaran kimia.</p></article></div><p class="tip"><strong>Jejak sejarah:</strong> Virtual Laboratory Physiology muncul pada 1977 dan berfokus pada bidang fisiologi.</p></section>
+                <div class="quiz-box">
+                    <p class="quiz-question">8. Ekstensi grafis file seperti .SVG, .AI, dan .EPS tergolong ke dalam
+                        jenis objek...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false"
+                            data-feedback="Salah. Bitmap umumnya berformat .jpg, .png, dan .bmp.">A. Gambar grafis
+                            Bitmap</button>
+                        <button data-correct="true"
+                            data-feedback="Benar! Format ini merupakan basis gambar grafis Vektor.">B. Gambar grafis
+                            Vektor</button>
+                        <button data-correct="false" data-feedback="Salah. Ini adalah file suara.">C. Audio
+                            multimedia</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
 
-<section><p class="eyebrow">04 · PILIH RUANG EKSPERIMEN</p><h2>Lima pintu menuju sains</h2><div class="number-list"><li><span class="number">01</span><span><strong>Laboratorium Maya Kemdikbud</strong><br>Portal Rumah Belajar dari Pemerintah Indonesia dengan simulasi interaktif, teori, dan lembar kerja praktikum.</span></li><li><span class="number">02</span><span><strong>PhET</strong><br>Dikembangkan University of Colorado Boulder untuk fisika, kimia, biologi, matematika, dan ilmu kebumian.</span></li><li><span class="number">03</span><span><strong>NOVA Labs</strong><br>Mengangkat iklim, evolusi, keamanan dunia maya, dan matahari melalui video animasi serta mini-game.</span></li><li><span class="number">04</span><span><strong>The Concord Consortium</strong><br>Menyediakan aktivitas STEM langkah demi langkah dengan fokus pada analisis data.</span></li><li><span class="number">05</span><span><strong>Chemistry Is All Around Us Network Portal</strong><br>Laboratorium maya dari Komisi Eropa untuk memperkaya pembelajaran kimia.</span></li></div></section>
+                <div class="quiz-box">
+                    <p class="quiz-question">9. Aplikasi pengelola sistem perangkat keras di bawah ini (misalnya
+                        Windows, Linux) tergolong kelompok...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false"
+                            data-feedback="Salah. Business software mengelola data bisnis dan inventaris.">A. Business
+                            Software</button>
+                        <button data-correct="true"
+                            data-feedback="Tepat! Mereka disebut Perangkat Lunak Sistem (System Software).">B. System
+                            Software</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Ini spesifik memecahkan problem perhitungan ilmiah.">C. Engineering
+                            Scientific Software</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
 
-<section><p class="eyebrow">05 · TANTANGAN AKHIR</p><h2>Uji pemahamanmu</h2><div class="quiz-box"><p class="quiz-question">Kamu ingin mengirim laporan agar tampil konsisten di berbagai perangkat. Format yang paling tepat adalah...</p><div class="quiz-options"><button data-correct="false">A. .XLSX, karena berisi tabel</button><button data-correct="true">B. .PDF, karena bersifat portabel</button><button data-correct="false">C. .MP3, karena mudah dibagikan</button></div><p class="quiz-feedback" id="quizFeedback"></p><p class="score" id="score">Skor: 0 / 1</p></div></section>
+                <div class="quiz-box">
+                    <p class="quiz-question">10. Untuk menempelkan kembali objek teks atau file setelah dieksekusi fitur
+                        Cut, pengguna harus menekan tombol...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false"
+                            data-feedback="Salah. ALT + PrintScreen menangkap jendela layar aktif.">A. ALT +
+                            PrintScreen</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. CTRL + Z adalah perintah Undo (membatalkan aksi).">B. CTRL +
+                            Z</button>
+                        <button data-correct="true"
+                            data-feedback="Benar! CTRL+V digunakan untuk mem-Paste (menempelkan) data yang dicut/copy.">C.
+                            CTRL + V</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+            </section>
 
-<section class="hero"><p class="eyebrow">SELESAI · REFLEKSI</p><h2>Buat teknologi bekerja untuk idemu.</h2><p class="lead">Pilih aplikasi dengan tepat, susun informasi secara rapi, rangkum konten dengan kritis, dan gunakan ruang digital untuk belajar serta berkarya.</p><div class="hero-line"></div><p><span class="pill">Diskusi: aplikasi apa yang paling membantu tugasmu minggu ini?</span></p></section>
-</div></div>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
-<script>
-var formalHeadings={"Isi setiap bagian dengan tujuan yang jelas":"Komponen dan Sistematika Laporan","Satu ide, banyak wujud":"Klasifikasi dan Bentuk Konten Digital","Mengapa buku digital menarik?":"Keunggulan Buku Digital","Eksperimen tanpa batas ruang":"Pengertian dan Manfaat Laboratorium Maya","Lima pintu menuju sains":"Penyedia Layanan Laboratorium Maya","Uji pemahamanmu":"Evaluasi Pemahaman Materi","Buat teknologi bekerja untuk idemu.":"Pemanfaatan Teknologi untuk Mendukung Gagasan"};
-document.querySelectorAll("h2").forEach(function(heading){if(formalHeadings[heading.textContent])heading.textContent=formalHeadings[heading.textContent]});
-Reveal.initialize({hash:true,controls:true,progress:true,slideNumber:"c/t",transition:"convex",transitionSpeed:"fast",backgroundTransition:"zoom",width:1280,height:720});
-document.querySelectorAll(".file").forEach(function(item){item.addEventListener("click",function(){document.querySelectorAll(".file").forEach(function(x){x.classList.remove("active")});item.classList.add("active");document.getElementById("fileDetail").textContent=item.dataset.file})});
-document.querySelectorAll(".choice").forEach(function(item){item.addEventListener("click",function(){document.querySelectorAll(".choice").forEach(function(x){x.classList.remove("selected")});item.classList.add("selected");document.getElementById("toolDetail").textContent=item.dataset.detail})});
-document.querySelectorAll(".tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".tab,.tab-panel").forEach(function(x){x.classList.remove("active")});tab.classList.add("active");document.getElementById(tab.dataset.tab).classList.add("active")})});
-var answered=false;document.querySelectorAll(".quiz-options button").forEach(function(button){button.addEventListener("click",function(){if(answered)return;answered=true;var correct=button.dataset.correct==="true";button.classList.add(correct?"correct":"wrong");document.getElementById("quizFeedback").textContent=correct?"Tepat! PDF mempertahankan tampilan dokumen saat dibagikan.":"Belum tepat. Ingat, PDF adalah dokumen portabel.";document.getElementById("quizFeedback").style.color=correct?"#32864a":"#d45b45";document.getElementById("score").textContent="Skor: "+(correct?"1":"0")+" / 1"})});
-</script>
+            <!-- SUBBAB B -->
+            <section>
+                <p class="eyebrow">02 · PROYEK KARYA TULIS</p>
+                <h2>B. Pembuatan Laporan</h2>
+                <p class="lead">Laporan dibuat secara sistematis, objektif, dan benar. Klik urutannya untuk menjelaskan
+                    bagian yang sedang dibahas.</p>
+                <div class="report-path">
+                    <div class="step"><span>01</span><strong>Kover</strong></div>
+                    <div class="step"><span>02</span><strong>Pengantar</strong></div>
+                    <div class="step"><span>03</span><strong>Daftar isi</strong></div>
+                    <div class="step"><span>04</span><strong>Pendahuluan</strong></div>
+                    <div class="step"><span>05</span><strong>Pembahasan</strong></div>
+                    <div class="step"><span>06</span><strong>Penutup</strong></div>
+                </div>
+                <p class="tip"><strong>Tip:</strong> gunakan Heading 1 dan Heading 2 agar Table of Contents dapat dibuat
+                    otomatis.</p>
+            </section>
+            <section>
+                <p class="eyebrow">02 · DETAIL LAPORAN</p>
+                <h2>Isi setiap bagian dengan tujuan yang jelas</h2>
+                <div class="card-grid">
+                    <article class="card accent">
+                        <h3>Kover</h3>
+                        <p>Memuat judul, nama pembuat, dan keterangan singkat. Di Word: <strong>Insert &gt; Cover
+                                Page</strong>.</p>
+                    </article>
+                    <article class="card coral">
+                        <h3>Kata Pengantar</h3>
+                        <p>Ulasan singkat agar pembaca memahami gambaran umum sebelum masuk pembahasan.</p>
+                    </article>
+                    <article class="card yellow">
+                        <h3>Daftar Isi</h3>
+                        <p>Memudahkan pembaca melihat urutan bab. Gunakan <strong>References &gt; Table of
+                                Contents</strong>.</p>
+                    </article>
+                    <article class="card accent">
+                        <h3>Pendahuluan</h3>
+                        <p>Menjelaskan latar belakang dan tujuan. Rapikan format dengan <strong>Layout &gt; Section
+                                Breaks</strong>.</p>
+                    </article>
+                    <article class="card coral">
+                        <h3>Pembahasan</h3>
+                        <p>Bagian inti yang dapat dilengkapi foto, gambar, dan data pendukung.</p>
+                    </article>
+                    <article class="card yellow">
+                        <h3>Penutup</h3>
+                        <p>Kesimpulan sederhana yang sesuai dengan isi pembahasan laporan.</p>
+                    </article>
+                </div>
+                <p class="tip"><strong>Nomor halaman:</strong> gunakan <strong>Insert &gt; Page Number</strong>. Atur
+                    judul bab dengan Styles: Heading 1 dan Heading 2.</p>
+            </section>
+
+            <!-- KUIS SUBBAB B -->
+            <section>
+                <p class="eyebrow">LATIHAN SOAL · SUBBAB B</p>
+                <h2>Kuis: Pembuatan Laporan</h2>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">1. Bagian pertama dari karya tulis laporan yang memuat judul utuh,
+                        identitas nama pembuat, serta keterangan singkat adalah...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false" data-feedback="Salah. Daftar Isi berisi navigasi halamannya.">A.
+                            Daftar Isi</button>
+                        <button data-correct="true"
+                            data-feedback="Benar! Halaman depan disebut Kover (Sampul Laporan).">B. Kover
+                            (Sampul)</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Pengantar biasanya berada di halaman kedua atau setelah Kover.">C.
+                            Kata Pengantar</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">2. Fitur pada Microsoft Word yang didesain secara spesifik untuk
+                        mempermudah pembuatan sampul laporan disebut...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false"
+                            data-feedback="Salah. Ini fitur merapikan format margin halaman.">A. Section Breaks</button>
+                        <button data-correct="true"
+                            data-feedback="Benar! Insert > Cover Page memberikan template sampul otomatis.">B. Insert >
+                            Cover Page</button>
+                        <button data-correct="false" data-feedback="Salah. Ini untuk membuat daftar isi otomatis.">C.
+                            Table of Contents</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">3. Pada sistematika dokumen tertulis, fungsi dibuatnya "Kata Pengantar"
+                        adalah untuk...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false" data-feedback="Salah. Kesimpulan dituliskan pada bab Penutup.">A.
+                            Menuliskan kesimpulan final dari penelitian</button>
+                        <button data-correct="false" data-feedback="Salah. Itu adalah fungsi dari Daftar Isi.">B.
+                            Memudahkan pembaca melihat halaman urutan bab</button>
+                        <button data-correct="true"
+                            data-feedback="Tepat! Sebagai ulasan singkat agar pembaca mendapat gambaran awal (preface).">C.
+                            Ulasan pengantar agar pembaca memahami gambaran umum</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">4. Jika Anda ingin agar daftar isi di Word dapat terdeteksi dan tercetak
+                        secara otomatis (Table of Contents), maka langkah wajib pada tiap judul babnya adalah...</p>
+                    <div class="quiz-options">
+                        <button data-correct="true"
+                            data-feedback="Benar! Anda wajib mengatur jenis Styles teksnya (Heading 1 atau Heading 2).">A.
+                            Mengatur format Styles tulisan dengan tipe Heading 1 / Heading 2</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Mewarnai tidak berefek pada sistem navigasi daftar isi.">B. Mewarnai
+                            font teks menjadi warna merah tebal</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Garis bawah tidak mendaftarkan indeks dokumen.">C. Menggarisbawahi
+                            huruf pada setiap awal judul kalimat</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">5. Untuk menciptakan navigasi daftar isi dokumen secara otomatis, sub-menu
+                        yang diklik di Ms. Word adalah...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false" data-feedback="Salah. Ini perintah untuk halaman nomor urut.">A.
+                            Insert > Page Number</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Fitur Layout Section Break memecah bagian format.">B. Layout > Section
+                            Breaks</button>
+                        <button data-correct="true"
+                            data-feedback="Benar! Daftar isi otomatis diatur di kolom menu References.">C. References >
+                            Table of Contents</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">6. Secara umum, sebuah laporan digital yang profesional harus disusun
+                        dengan mengedepankan prinsip sikap...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false"
+                            data-feedback="Salah. Data opini tidak cocok untuk karya tulis ilmiah baku.">A. Subjektif,
+                            opini pribadi bebas, dan santai</button>
+                        <button data-correct="true"
+                            data-feedback="Benar! Laporan harus berdasar data fakta yang benar dan terstruktur rapi.">B.
+                            Sistematis, objektif, dan memuat kebenaran</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Manipulasi data adalah pelanggaran etik penulisan.">C. Manipulatif dan
+                            menyajikan gambar fiktif rekayasa</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">7. Halaman yang khusus berisi latar belakang pembuatan proyek, serta
+                        penyampaian target tujuan ditulis pada komponen...</p>
+                    <div class="quiz-options">
+                        <button data-correct="true"
+                            data-feedback="Tepat! Latar belakang selalu diuraikan di bab Pendahuluan laporan.">A. Bab
+                            Pendahuluan</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Bab penutup tempat meletakkan ringkasan kesimpulan.">B. Bab Penutup /
+                            Kesimpulan</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Kover hanya berisi tampilan logo, judul proyek, dan nama.">C. Halaman
+                            Kover Luar</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">8. Area krusial laporan tempat penulis mencurahkan data penelitian hasil,
+                        menyisipkan foto lampiran bukti, dan diagram adalah bab...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false"
+                            data-feedback="Salah. Bab penutup ditulis singkat tanpa uraian bukti rumit.">A. Bab
+                            Penutup</button>
+                        <button data-correct="true"
+                            data-feedback="Benar! Bab Pembahasan merupakan bagian paling padat / inti tulisan.">B. Bab
+                            Pembahasan (Inti)</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Kata pengantar adalah permohonan sapaan awalan dari si penyusun.">C.
+                            Lembar Kata Pengantar</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">9. Apa tujuan dan fungsi disematkannya fitur "Insert > Page Number" pada
+                        Microsoft Word?</p>
+                    <div class="quiz-options">
+                        <button data-correct="false"
+                            data-feedback="Salah. Halaman margin kosong diatur di fitur Margin Layout.">A. Menambah
+                            halaman margin ruang kosong baru pada buku digital</button>
+                        <button data-correct="true"
+                            data-feedback="Benar! Untuk meletakkan nomor halaman berurutan (1,2,3..) secara instan.">B.
+                            Membubuhkan navigasi nomor halaman otomatis di setiap lembar tulisan</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Menghitung karakter huruf berada di menu Word Count.">C. Menghitung
+                            dan mencatat secara akurat total kata yang diketik pembuatnya</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">10. Untuk merekayasa/merapikan pemotongan struktur format dari satu bab ke
+                        bab halaman selanjutnya dengan cepat tanpa enter banyak kali, kita harus menggunakan...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false" data-feedback="Salah. Styles adalah template font judul bab.">A.
+                            Fitur Styles Heading</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Table of Content adalah menu daftar isi awal buku.">B. Fitur Table of
+                            Content otomatis</button>
+                        <button data-correct="true"
+                            data-feedback="Tepat! Section Breaks berguna untuk melompat memecah bagian area formatnya.">C.
+                            Layout > Section Breaks</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+            </section>
+
+            <!-- SUBBAB C -->
+            <section>
+                <p class="eyebrow">03 · KONTEN DIGITAL</p>
+                <h2>Satu ide, banyak wujud</h2>
+                <div class="tabs"><button class="tab active" data-tab="text">Tulisan</button><button class="tab"
+                        data-tab="image">Gambar</button><button class="tab" data-tab="audio">Audio</button><button
+                        class="tab" data-tab="video">Video</button><button class="tab" data-tab="book">Buku
+                        digital</button></div>
+                <div class="content-layout">
+                    <div>
+                        <div class="tab-panel active" id="text">
+                            <h3>Konten tulisan</h3>
+                            <p>Artikel website, cerpen, puisi, copywriting, e-book, dan caption media sosial.</p>
+                        </div>
+                        <div class="tab-panel" id="image">
+                            <h3>Konten gambar</h3>
+                            <p>Foto, spanduk, flyer, dan infografis menyampaikan pesan secara visual.</p>
+                        </div>
+                        <div class="tab-panel" id="audio">
+                            <h3>Konten audio</h3>
+                            <p>Podcast, siaran radio, file MP3, dan voice note berbasis suara.</p>
+                        </div>
+                        <div class="tab-panel" id="video">
+                            <h3>Konten video</h3>
+                            <p>Film, iklan, YouTube, dan TikTok menggabungkan suara dengan gambar bergerak.</p>
+                        </div>
+                        <div class="tab-panel" id="book">
+                            <h3>Buku digital</h3>
+                            <p>Hemat ruang dan kertas, ukuran huruf dapat diatur, interaktif, serta mudah ditautkan ke
+                                sumber.</p>
+                        </div>
+                    </div>
+                    <p class="quote">Content creator mengubah informasi menjadi pengalaman yang bisa dibaca, dilihat,
+                        didengar, dan dibagikan.</p>
+                </div>
+            </section>
+            <section>
+                <p class="eyebrow">03 · BACAAN DIGITAL</p>
+                <h2>Mengapa buku digital menarik?</h2>
+                <div class="card-grid">
+                    <article class="card accent">
+                        <h3>Lebih terjangkau</h3>
+                        <p>Biaya distribusi dan penyimpanan dapat lebih rendah daripada buku cetak.</p>
+                    </article>
+                    <article class="card coral">
+                        <h3>Fleksibel</h3>
+                        <p>Ukuran huruf dapat diatur sesuai kebutuhan pembaca.</p>
+                    </article>
+                    <article class="card yellow">
+                        <h3>Interaktif</h3>
+                        <p>Dapat terhubung dengan video, audio, dan tautan sumber.</p>
+                    </article>
+                    <article class="card accent">
+                        <h3>Hemat tempat</h3>
+                        <p>Banyak buku tersimpan dalam perangkat tanpa membutuhkan lemari.</p>
+                    </article>
+                    <article class="card coral">
+                        <h3>Ramah lingkungan</h3>
+                        <p>Mengurangi kebutuhan kertas cetak.</p>
+                    </article>
+                    <article class="card yellow">
+                        <h3>Mudah dibagikan</h3>
+                        <p>Konten dapat dikirim secara online melalui surel, blog, dan media sosial.</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- KUIS SUBBAB C -->
+            <section>
+                <p class="eyebrow">LATIHAN SOAL · SUBBAB C</p>
+                <h2>Kuis: Konten & Buku Digital</h2>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">1. Orang dengan profesi yang bertugas merangkai dan mengubah informasi
+                        mentah menjadi wujud visual/audio yang bisa dibaca, dilihat, atau didengar publik disebut...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false" data-feedback="Salah. Ini profesi pengelolaan perangkat keras.">A.
+                            System Administrator (Admin IT)</button>
+                        <button data-correct="true"
+                            data-feedback="Tepat! Pencipta konten digital diistilahkan Content Creator.">B. Content
+                            Creator</button>
+                        <button data-correct="false" data-feedback="Salah. Akuntan ahli merekam angka finansial.">C.
+                            Akuntan Pajak Finansial</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">2. Wujud dari hasil karya konten tulisan berbasis bacaan teks adalah...</p>
+                    <div class="quiz-options">
+                        <button data-correct="true"
+                            data-feedback="Benar! Copywriting/teks promosi & caption socmed adalah wujud literasi huruf tulisan.">A.
+                            Copywriting promosi dan rentetan caption media sosial</button>
+                        <button data-correct="false" data-feedback="Salah. Rekaman podcast masuk rumpun audio suara.">B.
+                            Rekaman dialog Podcast berformat MP3</button>
+                        <button data-correct="false" data-feedback="Salah. Ini tergolong visual multimedia bergerak.">C.
+                            Vlog perjalanan yang ada di YouTube</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">3. Infografis (Informasi Grafis), gambar banner, serta flyer spanduk
+                        tergolong ke dalam rumpun karya...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false"
+                            data-feedback="Salah. Buku digital biasanya berisi ribuan karakter huruf padat.">A. Karya
+                            media Buku Digital teks</button>
+                        <button data-correct="false" data-feedback="Salah. Gambar desain tak selalu bersuara.">B. Konten
+                            media Audio/Suara Interaktif</button>
+                        <button data-correct="true"
+                            data-feedback="Benar! Infografis dan gambar cetak adalah contoh murni konten statis (gambar).">C.
+                            Karya media Gambar desain yang komunikatif (visual murni)</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">4. Bentuk inovasi konten kreatif yang sukses menggabungkan harmoni suara
+                        audio dengan rentetan pergerakan gambar adalah...</p>
+                    <div class="quiz-options">
+                        <button data-correct="true"
+                            data-feedback="Tepat! Karya sinematik di platform TikTok/Film merupakan sajian media Konten Video.">A.
+                            Konten sinematik/Video (seperti film, konten TikTok)</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Audio MP3 tidak berwujud gerak gambar mata.">B. Konten siaran Radio
+                            MP3 murni (Voice Note)</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Artikel hanya susunan kata benda yang kaku.">C. Karya cetak Artikel
+                            website majalah statis</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">5. Salah satu faktor utama mengapa memproduksi dan menerbitkan "Buku
+                        Digital" dinilai sangat ramah bagi lingkungan adalah karena...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false"
+                            data-feedback="Salah. Buku digital justru membaca listrik via peranti gawai.">A. Tidak
+                            memerlukan energi kelistrikan satupun saat diakses layar gawai</button>
+                        <button data-correct="true"
+                            data-feedback="Benar! Buku digital e-book diproduksi memangkas tebangan pohon demi menekan limbah kertas fisik.">B.
+                            Mampu secara efektif mereduksi beban material penggunaan konsumsi kertas fisik dari pohon
+                            alam</button>
+                        <button data-correct="false" data-feedback="Salah. Tinta tidak diperlukan pada e-book maya.">C.
+                            Membutuhkan material tinta spidol ramah air daur ulang</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">6. Secara fungsional dan teknis, hal paling menonjol yang membedakan Buku
+                        Digital dengan lembaran Buku Cetak Tradisional adalah sifatnya yang...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false" data-feedback="Salah. Justru buku cetak sangat berat ditumpuk.">A.
+                            Memiliki bobot fisik ekstra berat bila dibawa berjalan-jalan jauh ke sekolah</button>
+                        <button data-correct="true"
+                            data-feedback="Benar! Keistimewaan e-book adalah interaktivitas hiperlink (tautan video/audio/referensi).">B.
+                            Begitu interaktif sebab didalamnya mampu disisipi tautan luar (link) video maupun
+                            audio</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Font bacaan fisik mustahil dimodifikasi ukurannya kembali.">C. Ukuran
+                            huruf teks cetakannya sama sekali tidak dapat diubah-ubah / dimodifikasi</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">7. Keunggulan mutlak buku digital (e-book) bagi perpustakaan jika ditinjau
+                        secara biaya simpan komersial adalah...</p>
+                    <div class="quiz-options">
+                        <button data-correct="true"
+                            data-feedback="Tepat! Biaya gudang distribusinya nihil karena wujud datanya virtual, membuatnya lebih terjangkau.">A.
+                            Sangat efisien karena menghemat drastis anggaran sewa rak lemari penyimpan (hemat
+                            tempat/terjangkau)</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Kertas buku tak mungkin diputar jadi tayangan klip.">B. Dapat dibakar
+                            ke dalam wadah piringan keping CD lalu ditonton per frame layaknya sinema</button>
+                        <button data-correct="false" data-feedback="Salah. Pembuatan cetakan fisik pabrik mahal.">C.
+                            Sangat laku di pasaran jika dicetak menggunakan jenis kertas emas dan bungkus plastik
+                            mewah</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">8. Sifat fleksibilitas (kemudahan penyesuaian) sebuah buku elektronik
+                        digital ditunjukkan dengan kemampuan perantinya dalam hal...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false" data-feedback="Salah. Tinta pena dioles manual oleh manusia.">A.
+                            Warna dasar sampul luarnya bereaksi dan memudar layaknya tulisan tinta luntur jika ditetesi
+                            cairan layar</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Aplikasi tidak melukis komik ajaib otomatis.">B. Kertas animasinya
+                            mampu melukis gambaran alur tokoh cerita dengan sendirinya</button>
+                        <button data-correct="true"
+                            data-feedback="Benar! Font fleksibel e-book bisa dibesar-kecilkan kapanpun sesuai jarak pandang ideal si pembaca.">C.
+                            Ukuran dan resolusi dari font huruf dapat disesuaikan (di-zoom in/out) tanpa merusak teks
+                            asli</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">9. Jika Anda punya produk tulisan kreatif (novel indie) lalu menyebarkannya
+                        dengan metode terkirim via surel ke luar negeri tanpa repot packing kotak, ini dinamakan
+                        keunggulan buku digital dalam unsur...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false"
+                            data-feedback="Salah. Ramah lingkungan itu karena tak merobek kertas kayu.">A. Faktor
+                            kebersihan dan ramah pemeliharaan lingkungan hayati hijau</button>
+                        <button data-correct="true"
+                            data-feedback="Tepat! Buku PDF super gampang direplikasi & diunggah, ia praktis karena sifatnya MUDAH DIBAGIKAN.">B.
+                            Tingkat kecepatan akses kemudahan mendistribusikan / membagikan konten publik (sharing
+                            file)</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Buku interaktif berarti file disisipi tombol putar klip multimedia khusus.">C.
+                            Unsur fleksibilitas desain responsif & unsur tautan interaktif video dokumentasi
+                            audio</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">10. Karya konten audio murni yang berformat siaran radio (sering diisi
+                        obrolan/talkshow opini naratif) namun berbasis digital internet sering dikenal luas dengan
+                        nama...</p>
+                    <div class="quiz-options">
+                        <button data-correct="true"
+                            data-feedback="Benar! Podcast adalah obrolan siaran radio yang didigitalisasi ke bentuk MP3 di internet.">A.
+                            Siniar dialog santai (Podcast)</button>
+                        <button data-correct="false" data-feedback="Salah. Typografi bukan karya suara.">B. Tipografi
+                            grafis animasi kaligrafi (Graphic Text)</button>
+                        <button data-correct="false" data-feedback="Salah. Pamflet dicetak statis.">C. Brosur atau flyer
+                            lipat lipat berdimensi kertas</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+            </section>
+
+            <!-- SUBBAB D -->
+            <section>
+                <p class="eyebrow">04 · LABORATORIUM MAYA</p>
+                <h2>Eksperimen tanpa batas ruang</h2>
+                <p class="lead">Laboratorium maya adalah simulasi komputer dari laboratorium tatap muka. Ia membantu
+                    siswa memahami konsep dan bereksperimen saat alat fisik terbatas.</p>
+                <div class="lab-grid">
+                    <article class="lab"><b>Kemdikbud</b>
+                        <p>Simulasi, teori, dan lembar kerja dari Rumah Belajar.</p>
+                    </article>
+                    <article class="lab"><b>PhET</b>
+                        <p>Fisika, kimia, biologi, matematika, dan ilmu kebumian.</p>
+                    </article>
+                    <article class="lab"><b>NOVA Labs</b>
+                        <p>Iklim, evolusi, keamanan siber, matahari, dan mini-game.</p>
+                    </article>
+                    <article class="lab"><b>Concord</b>
+                        <p>Modul STEM interaktif dengan fokus analisis data.</p>
+                    </article>
+                    <article class="lab"><b>Chemistry</b>
+                        <p>Portal Komisi Eropa untuk pembelajaran kimia.</p>
+                    </article>
+                </div>
+                <p class="tip"><strong>Jejak sejarah:</strong> Virtual Laboratory Physiology muncul pada 1977 dan
+                    berfokus pada bidang fisiologi.</p>
+            </section>
+            <section>
+                <p class="eyebrow">04 · PILIH RUANG EKSPERIMEN</p>
+                <h2>Lima pintu menuju sains</h2>
+                <div class="number-list">
+                    <li><span class="number">01</span><span><strong>Laboratorium Maya Kemdikbud</strong><br>Portal Rumah
+                            Belajar dari Pemerintah Indonesia dengan simulasi interaktif, teori, dan lembar kerja
+                            praktikum.</span></li>
+                    <li><span class="number">02</span><span><strong>PhET</strong><br>Dikembangkan University of Colorado
+                            Boulder untuk fisika, kimia, biologi, matematika, dan ilmu kebumian.</span></li>
+                    <li><span class="number">03</span><span><strong>NOVA Labs</strong><br>Mengangkat iklim, evolusi,
+                            keamanan dunia maya, dan matahari melalui video animasi serta mini-game.</span></li>
+                    <li><span class="number">04</span><span><strong>The Concord Consortium</strong><br>Menyediakan
+                            aktivitas STEM langkah demi langkah dengan fokus pada analisis data.</span></li>
+                    <li><span class="number">05</span><span><strong>Chemistry Is All Around Us Network
+                                Portal</strong><br>Laboratorium maya dari Komisi Eropa untuk memperkaya pembelajaran
+                            kimia.</span></li>
+                </div>
+            </section>
+
+            <!-- KUIS SUBBAB D -->
+            <section>
+                <p class="eyebrow">LATIHAN SOAL · SUBBAB D</p>
+                <h2>Kuis: Laboratorium Maya</h2>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">1. Apa definisi dasar dari layanan konsep "Laboratorium Maya" yang
+                        digunakan institusi edukasi pendidikan modern?</p>
+                    <div class="quiz-options">
+                        <button data-correct="false" data-feedback="Salah. Ini deskripsi ruangan fisik aslinya.">A.
+                            Sebuah ruangan besar dari tumpukan beton tertutup berisi zat reagen kimia berbahaya dan
+                            pipet tabung takaran</button>
+                        <button data-correct="true"
+                            data-feedback="Benar! Laboratorium maya merupakan rekayasa program simulasi komputer eksperimen virtual (tanpa kontak raga).">B.
+                            Simulasi instrumen komputasi perangkat lunak (digital) yang merekayasa bentuk praktek
+                            laboratorium tatap muka</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Bengkel bongkar pasang ini pelatihan mesin teknik mekanis biasa.">C.
+                            Sarana bengkel mekanik perkakas besi perakitan kerangka onderdil suku cadang komputer
+                            rongsok CPU lama</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">2. Menurut jejak sejarah teknologi simulasi medis masa lampau, laboratorium
+                        maya kuno kali pertama mencuat eksistensinya di tahun 1977 dengan berkutat membedah bidang
+                        disiplin ilmu...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false"
+                            data-feedback="Salah. Astronomi berkaitan planet simulasi teleskop orbit alam semesta.">A.
+                            Astronomi observasi gugus rasi bintang angkasa (Teleskop Tata Surya Bimasakti)</button>
+                        <button data-correct="true"
+                            data-feedback="Tepat! Perintis Virtual Lab tahun 1977 berfokus mengobservasi Fisiologi (Virtual Laboratory Physiology).">B.
+                            Fisiologi kesehatan simulasi sistem raga fungsi makhluk hidup hayati</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Sejarah ini merujuk ke fisiologi, bukan matematika aljabar.">C. Ilmu
+                            Hitungan Geometri Kalkulus dan Komputasi Aljabar tingkat dewa</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">3. Mengapa banyak institusi modern terdorong merancang laboratorium maya
+                        (apa manfaat paling krusialnya bagi peserta didik di lapangan)?</p>
+                    <div class="quiz-options">
+                        <button data-correct="true"
+                            data-feedback="Benar! Manfaatnya adalah membantu siswa mempraktekkan eksperimen sains walau di tengah kondisi serba terbenturnya dana fisik ketiadaan prasarana alat mahal di sekolahnya.">A.
+                            Sangat membantu siswa terus berinovasi bereksperimen sains di saat alat fisik perlengkapan
+                            asli di daerah tertinggal kondisinya sungguh serba minim (keterbatasan ruang alat)</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Laboratorium maya dirancang bukan untuk berbelanja kebutuhan bahan pokok laboratorium sejati.">B.
+                            Memudahkan siswa langsung memesan, menyewa, dan memborong bahan cairan kimia asli untuk
+                            diantarkan langsung kurir sekolah kerumahnya lewat marketplace e-commerce
+                            terintegrasi</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Menghindari pembelajaran wajib ini salah kaprah moral.">C. Supaya
+                            siswa awam bebas dari keharusan kewajiban mutlak belajar ilmu teori di kelas membosankan
+                            yang dinilai menyita jam padatnya</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">4. Portal fasilitas laboratorium persembahan dari pihak resmi internal
+                        Pemerintah Indonesia (Kemdikbudristek) yang menghimpun lembar kerja praktikum maya dinamakan
+                        platform layanan...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false"
+                            data-feedback="Salah. The Concord adalah produk web rintisan negara barat (internasional).">A.
+                            Web The Concord Consortium</button>
+                        <button data-correct="true"
+                            data-feedback="Benar! Portal belajar dari Pemerintah RI dinamakan secara lugas yakni 'Rumah Belajar'.">B.
+                            Portal Edukasi 'Rumah Belajar' milik Pusat Data Data Teknologi Informasi Pendidikan
+                            (Pusdatin)</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Ini buatan Universitas Colorado, bukan milik negeri Indonesia asli.">C.
+                            Aplikasi Mobile Laboratorium PhET Boulder</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">5. Apabila Anda menugaskan peserta didik memperdalam animasi edukasi
+                        seputar bidang Keamanan Siber, dinamika evolusi purba, hingga anomali fenomena radiasi Iklim
+                        Matahari melalui jalur penyelesaian (game kuis santai), sebaiknya rujukan mana yang sangat pas
+                        diakses?</p>
+                    <div class="quiz-options">
+                        <button data-correct="true"
+                            data-feedback="Tepat! NOVA Labs secara spesifik mengangkat klip mini-game mengenai sekuritas cyber dunia maya (hacker), evolusi makhluk, sampai topik iklim bumi-matahari yang diolah kreatif.">A.
+                            Web animasi NOVA Labs</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Phet kuat di eksperimen animasi drag & drop IPA eksak konvensional.">B.
+                            Portal PhET University of Colorado</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Portal komisi Eropa ini lebih terpusat ke mapel Kimia mendasar murni.">C.
+                            Platform Chemistry Is All Around Us (Komisi Eropa)</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">6. Secara fungsional, portal besutan Universitas bergengsi University of
+                        Colorado Boulder (PhET Interactive Simulations) berkonsentrasi menyediakan eksperimen IPA
+                        beraneka macam hal yang meliputi beberapa aspek mapel utama. Manakah yang bukan fokus dari
+                        PhET...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false"
+                            data-feedback="Salah. Mapel wajib MIPA (Fisika, Biologi) adalah menu utama hidangan dari web PhET.">A.
+                            Biologi Anatomi Sel, Gerak Fisika Kinetik Energi, dan Hitungan Matematika</button>
+                        <button data-correct="true"
+                            data-feedback="Benar! PhET sama sekali tidak menyediakan materi hafalan rumpun sosial sejarah pahlawan bahasa.">B.
+                            Ilmu Sosial Hafalan Sejarah Peradaban Kuno dan Eksperimen Susunan Tata Bahasa Sastra
+                            Budaya</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Reaksi suhu eksak juga merupakan andalan web tersebut.">C. Ilmu
+                            Kebumian Tanah dan Rekayasa Uji Coba Kecepatan Laju Reaksi Molekul Kimia</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">7. Apa fitur esensial dari laboratorium pendidikan yang disajikan eksklusif
+                        oleh rintisan 'The Concord Consortium' jika diamati secara mendalam...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false" data-feedback="Salah. Bermain video bukan tujuan utama Concord.">A.
+                            Modul bersenang-senang murni untuk menghabiskan durasi jam bermain bebas anak dari letih jam
+                            sekolah panjang</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Concord tidak menyajikan katalog kimia dari lembaga benua Eropa, ini tugasnya 'Chemistry is All around'.">B.
+                            Menyajikan galeri arsip dokumentasi tabel kimia hasil cetakan Komisi Parlemen Eropa
+                            terupdate</button>
+                        <button data-correct="true"
+                            data-feedback="Tepat! The Concord ditugaskan menyediakan aktivitas STEM tahap demi tahap terpandu untuk menunjang daya pikir Analisis Data empiris.">C.
+                            Fasilitas modul integrasi ilmu terapan kompleks (STEM) interaktif yang menekan ketajaman
+                            siswa terhadap teknik Analisis Data (pembacaan plot grafik sains)</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">8. Untuk mengakomodir tenaga pendidik Eropa agar pembelajaran seputar wujud
+                        zat material tidak begitu dihindari lantaran rumit, maka Komisi otoritas Eropa ikut turun gunung
+                        menggarap ruang eksperimen digital eksklusif maya berjuluk...</p>
+                    <div class="quiz-options">
+                        <button data-correct="true"
+                            data-feedback="Benar! Platform 'Chemistry Is All Around Us' ini disponsori lembaga Uni Eropa guna memperkaya wawasan guru/siswa eropa di ranah ilmu Kimia kehidupan.">A.
+                            Chemistry Is All Around Us Network Portal</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Ini milik Indonesia (Pusdatin Dikbudristek RI).">B. Situs Web Edukasi
+                            Rumah Belajar Bersama TIK</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. NOAA terkait dengan Nova Labs dari badan iklim amrik utara.">C. NOAA
+                            Cyber Defense Simulation</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">9. Dari kumpulan keunggulan berikut, mana faktor krusial yang bisa menjegal
+                        beroperasinya (kekurangan mutlak/tantangan berat) program Laboratorium Maya di suatu sekolah
+                        pedalaman...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false"
+                            data-feedback="Salah. Laboratorium simulasi tidak dapat menimbulkan bahaya keracunan nafas sungguhan bagi pesertanya karena 100% fiksi mesin.">A.
+                            Keselamatan resiko nyawa yang tinggi dikarenakan tumpahnya pecahan beling zat gas yang
+                            reaktif racun jika terhirup paru-paru</button>
+                        <button data-correct="true"
+                            data-feedback="Tepat! Kebergantungan utama mutlak platform ini ada pada pasokan arus listrik konsisten & sinyal provider akses Jaringan Internet yang kencang, sulit bila mati lampu atau daerah blank-spot sinyal.">B.
+                            Mutlak menuntut ekosistem pasokan ketersediaan jaringan konektivitas sinyal (Internet)
+                            stabil & mesin perangkat keras komputasi (Hardware Listrik) yang memadai di pelosok
+                            desa</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. Biayanya malah cenderung hemat karena tak membeli komponen pecah belah mikroskop mahal berkali-kali.">C.
+                            Memakan anggaran pajak sekolah yang sungguh fantastis akibat sekolah harus berulang kali
+                            berlangganan membeli software CD berlisensi VIP harian</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="quiz-question">10. Konsep terintegrasi empat dimensi lintas disiplin ilmu eksak masa
+                        depan, yakni penggabungan irisan (Sains, Teknologi komputasi, Rekayasa mesin
+                        bangunan/Engineering, dan Logika Matematika abstrak) yang jadi ruh acuan utama dalam silabus
+                        portal 'Concord Consortium' adalah representasi dari istilah singkatan global...</p>
+                    <div class="quiz-options">
+                        <button data-correct="false"
+                            data-feedback="Salah. UI/UX adalah desain tata letak antarmuka grafis aplikasi, bukan mapel lintas ilmu keras.">A.
+                            Kurikulum Desain UI/UX Design Fundamental</button>
+                        <button data-correct="true"
+                            data-feedback="Benar! Akronim ini bernama STEM (Science, Technology, Engineering, & Mathematics).">B.
+                            Kurikulum Lintas Disiplin Ilmu STEM Edukatif</button>
+                        <button data-correct="false"
+                            data-feedback="Salah. GUI merupakan jenis antarmuka layar sistem Windows.">C. Konsep Graphic
+                            User Interface Interaktif (GUI)</button>
+                    </div>
+                    <p class="quiz-feedback"></p>
+                </div>
+            </section>
+
+            <!-- PENUTUP REFLEKSI -->
+            <section class="hero">
+                <p class="eyebrow">SELESAI · REFLEKSI</p>
+                <h2>Buat teknologi bekerja untuk idemu.</h2>
+                <p class="lead">Pilih aplikasi dengan tepat, susun informasi secara rapi, rangkum konten dengan kritis,
+                    dan gunakan ruang digital untuk belajar serta berkarya.</p>
+                <div class="hero-line"></div>
+                <p><span class="pill">Diskusi: aplikasi apa yang paling membantu tugasmu minggu ini?</span></p>
+            </section>
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script>
+        // Logic merapikan nama subbab formal
+        var formalHeadings = { "Isi setiap bagian dengan tujuan yang jelas": "Komponen dan Sistematika Laporan", "Satu ide, banyak wujud": "Klasifikasi dan Bentuk Konten Digital", "Mengapa buku digital menarik?": "Keunggulan Buku Digital", "Eksperimen tanpa batas ruang": "Pengertian dan Manfaat Laboratorium Maya", "Lima pintu menuju sains": "Penyedia Layanan Laboratorium Maya" };
+        document.querySelectorAll("h2").forEach(function (heading) { if (formalHeadings[heading.textContent]) heading.textContent = formalHeadings[heading.textContent] });
+
+        // Inisialisasi Reveal
+        Reveal.initialize({ hash: true, controls: true, progress: true, slideNumber: "c/t", transition: "convex", transitionSpeed: "fast", backgroundTransition: "zoom", width: 1280, height: 720 });
+
+        // Logika interaksi File Format Detail
+        document.querySelectorAll(".file").forEach(function (item) { item.addEventListener("click", function () { document.querySelectorAll(".file").forEach(function (x) { x.classList.remove("active") }); item.classList.add("active"); document.getElementById("fileDetail").textContent = item.dataset.file }) });
+
+        // Logika interaksi UI Menu Toggles
+        document.querySelectorAll(".choice").forEach(function (item) { item.addEventListener("click", function () { document.querySelectorAll(".choice").forEach(function (x) { x.classList.remove("selected") }); item.classList.add("selected"); document.getElementById("toolDetail").textContent = item.dataset.detail }) });
+
+        // Logika interaksi Tabs Konten Digital
+        document.querySelectorAll(".tab").forEach(function (tab) { tab.addEventListener("click", function () { document.querySelectorAll(".tab,.tab-panel").forEach(function (x) { x.classList.remove("active") }); tab.classList.add("active"); document.getElementById(tab.dataset.tab).classList.add("active") }) });
+
+        // Logika Interaktif Khusus Multiple-Choice Quizzes Independen
+        document.querySelectorAll(".quiz-box").forEach(function (quizContainer) {
+            var answered = false;
+            var buttons = quizContainer.querySelectorAll(".quiz-options button");
+            var feedbackEl = quizContainer.querySelector(".quiz-feedback");
+
+            buttons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    if (answered) return;
+                    answered = true; // Mengunci box yang telah dijawab ini
+
+                    var isCorrect = button.dataset.correct === "true";
+                    var feedbackMsg = button.dataset.feedback;
+
+                    // Memberikan kelas hijau untuk benar, merah jambu untuk salah
+                    button.classList.add(isCorrect ? "correct" : "wrong");
+
+                    if (feedbackEl) {
+                        feedbackEl.textContent = feedbackMsg;
+                        feedbackEl.style.display = "block";
+                        feedbackEl.style.color = isCorrect ? "#32864a" : "#d45b45";
+                    }
+                });
+            });
+        });
+    </script>
 </body>
+
 </html>
